@@ -10,65 +10,33 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME 	= libftprintf.a
-LIB 	= libft.a
-INC 	= printf.h
+DIR 	= ../
+PRINTF 	= libftprintf.a
 FLAGS 	= -Wall -Werror -Wextra
+
 BTEST 	= test.c
+CTEST	= test_c.c
 DTEST	= test_d.c
-DIR 	= lib/
 
-SRC = 	src/ft_printf.c \
-		src/functions.c \
-		src/percentage.c \
-		arg/type_s.c \
-		arg/type_d.c \
-		arg/type_c.c \
-		arg/type_x.c \
-		arg/type_p.c \
-		arg/type_u.c \
+all:
+	@make re -C $(DIR)
 
-OBJ = $(SRC:%.c=%.o)
-
-all: $(SRC) $(NAME)
-
-$(NAME): $(OBJ)
+testB: all
+	$(CC) $(DIR)$(PRINTF) $(BTEST) -o output_test
 	@echo ""
-	@ar rcs $@ $^
-	@ranlib $(NAME) $(DIR)$(LIB)
-	@mkdir obj
-	@mv $(OBJ) obj
-	@echo "~~~~ Done creating libftprintf.a \n"
-	
-%.o: %.c
-	@echo "Compiling $< $@"
-	@$(CC) $(FLAGS) -I $(INC) -c $< -o $@
-	
-clean:
-	@$(RM) -rf obj
-	@echo "Removing $@"
-	@$(RM) $(DIR)test
-	@echo "~~~~ Done Cleaning \n"
-	
-fclean: clean
-	@$(RM) $(NAME)
-	@echo "Removing $@"
-	@echo "~~~~ Done with (F)abulous (Clean)ing \n"
+	@./output_test
 
-re: fclean all
-	@echo "~~~~ Done Restarting \n"
-
-testB: re
-	$(CC) test/$(BTEST) $(NAME) -o test/test
+testC: all
+	$(CC) $(DIR)$(PRINTF) $(CTEST) -o output_test_c
 	@echo ""
-	@./test/test
+	@./output_test_c
 
-testD: re
-	$(CC) $(FLAGS) test/$(DTEST) $(NAME) -o test/test_d
+testD: all
+	$(CC) $(DIR)$(PRINTF) $(DTEST) -o output_test_d
 	@echo ""
-	@./test/test_d
+	@./output_test_d
 
-fix: re
+fix: all
 	@gcc -g $(SRC)
 	@echo "---- Done compiling for debugger.\n"
 	@./a.out
