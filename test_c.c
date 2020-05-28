@@ -5,12 +5,12 @@ void	result(int test, int ft)
 {
 	if (test == ft)
 	{
-		ft_putstr("				PASS\n");
+		printf("				PASS\n");
 		g_pass++;
 	}
 	else
 	{
-		ft_putstr("				FAIL\n");
+		printf("				FAIL\n");
 		printf("				pf[%d]\n", test - 5);
 		printf("				ft[%d]\n\n", ft - 5);
 	}
@@ -27,23 +27,13 @@ int		main(void)
 	g_pass 			= 0;
 	g_test			= 0;
 
-
-	ft_putstr("_____________________________________\nCHARS: \n\n");
+	printf("_____________________________________\nCHARS: \n\n");
 
 	test =	printf(			"%%c 		|%c|\n", c);
 	t =	ft_printf(			"%%c 		|%c|\n", c);
 	result(test, t);
 	test =	printf(			"%%.c 		|%.c|\n", c);
 	t =	ft_printf(			"%%.c 		|%.c|\n", c);
-	result(test, t);
-	test =	printf(			"%%0c 		|%0c|\n", c);
-	t =	ft_printf(			"%%0c 		|%0c|\n", c);
-	result(test, t);
-	test =	printf(			"%%05c 		|%05c|\n", c);
-	t =	ft_printf(			"%%05c 		|%05c|\n", c);
-	result(test, t);
-	test =	printf(			"%%-c 		|%-c|\n", c);
-	t =	ft_printf(			"%%-c 		|%-c|\n", c);
 	result(test, t);
 	test =	printf(			"%%-4c 		|%-4c|\n", c);
 	t =	ft_printf(			"%%-4c 		|%-4c|\n", c);
@@ -81,6 +71,15 @@ int		main(void)
 	test =	printf(			"%%ccc		|%c%c%c|\n", c, d, 7);
 	t =	ft_printf(			"%%ccc		|%c%c%c|\n", c, d, 7);
 	result(test, t);
+	test =	printf(			"%%0c 		|%0c|\n", c);
+	t =	ft_printf(			"%%0c 		|%0c|\n", c);
+	result(test, t);
+	test =	printf(			"%%05c 		|%05c|\n", c);
+	t =	ft_printf(			"%%05c 		|%05c|\n", c);
+	result(test, t);
+	test =	printf(			"%%-c 		|%-c|\n", c);
+	t =	ft_printf(			"%%-c 		|%-c|\n", c);
+	result(test, t);
 	test =	printf(			"%%c 		|%c|\n", -0);
 	t =	ft_printf(			"%%c 		|%c|\n", -0);
 	result(test, t);
@@ -90,8 +89,11 @@ int		main(void)
 	test =	printf(			"%%c 		|%c|\n");
 	t =	ft_printf(			"%%c 		|%c|\n");
 	result(test, t);
-	test =	printf(			"lvlup 		|%-2c%-3c%-4c%-1c%-2c%-3c%-4c%-1c%-2c%-3c%-4c%-1c%-2c%-1c%-3c|\n",' ','!','"','#','$','%','&','\'','(',')','*','+',',','-','.');
-	t =	ft_printf(			"lvlup 		|%-2c%-3c%-4c%-1c%-2c%-3c%-4c%-1c%-2c%-3c%-4c%-1c%-2c%-1c%-3c|\n",' ','!','"','#','$','%','&','\'','(',')','*','+',',','-','.');
+	test =	printf(			"lvlup 		|%2c%3c%4c%1c%2c%3c%4c%1c%2c%3c%4c%1c%2c%1c%3c|\n",' ','!','"','#','$','%','&','\'','(',')','*','+',',','-','.');
+	t =	ft_printf(			"lvlup 		|%2c%3c%4c%1c%2c%3c%4c%1c%2c%3c%4c%1c%2c%1c%3c|\n",' ','!','"','#','$','%','&','\'','(',')','*','+',',','-','.');
+	result(test, t);
+	test =	printf(			"lvl - 		|%-2c%-3c%-4c%-1c%-2c%-3c%-4c%-1c%-2c%-3c%-4c%-1c%-2c%-1c%-3c|\n",' ','!','"','#','$','%','&','\'','(',')','*','+',',','-','.');
+	t =	ft_printf(			"lvl - 		|%-2c%-3c%-4c%-1c%-2c%-3c%-4c%-1c%-2c%-3c%-4c%-1c%-2c%-1c%-3c|\n",' ','!','"','#','$','%','&','\'','(',')','*','+',',','-','.');
 	result(test, t);
 	
 	printf("\n RESULT: %d correct out of %d tests\n\n", g_pass, g_test);

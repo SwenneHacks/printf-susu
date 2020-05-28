@@ -5,12 +5,12 @@ void	result(int test, int ft)
 {
 	if (test == ft)
 	{
-		ft_putstr("				PASS\n");
+		printf("				PASS\n");
 		g_pass++;
 	}
 	else
 	{
-		ft_putstr("				FAIL\n");
+		printf("				FAIL\n");
 		printf("				pf[%d]\n", test - 5);
 		printf("				ft[%d]\n\n", ft - 5);
 	}
@@ -28,7 +28,7 @@ int		main(void)
 	g_pass 			= 0;
 	g_test			= 0;
 
-ft_putstr("\n____________________________________\nSTRINGS: \n\n");
+	printf("\n____________________________________\nSTRINGS: \n\n");
 
 	test =	printf(			"%%5s 		|%5s|\n", s);
 	t =	ft_printf(			"%%5s 		|%5s|\n", s);
@@ -89,7 +89,7 @@ ft_putstr("\n____________________________________\nSTRINGS: \n\n");
 	t =	ft_printf(			"%%u 		|%u|\n", d);
 	result(test, t);
 	
-ft_putstr("\n_____________________________________\nBONUS: \n\n");
+printf("\n_____________________________________\nBONUS: \n\n");
 	
 			printf(		"%%+d"); 		
 	test =	printf(			"		|%+d|\n", i);
@@ -174,7 +174,7 @@ ft_putstr("\n_____________________________________\nBONUS: \n\n");
 
 	printf("\n[Above: %d | %d OK]\n", g_test, g_pass);
 
-ft_putstr("\n_____________________________________ TO FIX: \n\n");
+printf("\n_____________________________________ TO FIX: \n\n");
 
 	test =	printf(			"%%u,-		|%u|\n", i);
 	t =	ft_printf(			"%%u,-		|%u|\n", i);

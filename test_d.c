@@ -5,12 +5,12 @@ void	result(int test, int ft)
 {
 	if (test == ft)
 	{
-		ft_putstr("				PASS\n");
+		printf("				PASS\n");
 		g_pass++;
 	}
 	else
 	{
-		ft_putstr("				FAIL\n");
+		printf("				FAIL\n");
 		printf("				pf[%d]\n", test - 5);
 		printf("				ft[%d]\n\n", ft - 5);
 	}
@@ -24,7 +24,7 @@ int		main(void)
 	g_pass 			= 0;
 	g_test			= 0;
 
-ft_putstr("_____________________________________\nBASICS:\n\n");
+printf("_____________________________________\nBASICS:\n\n");
 
 		printf(			"%%i");
 	test =	printf(			"		|%i|\n", 7);
@@ -51,7 +51,7 @@ ft_putstr("_____________________________________\nBASICS:\n\n");
 	t =	ft_printf(			"		|%00011d|\n", 7);
 	result(test, t);
 
-ft_putstr("_____________________________________\nPRECISION:\n\n");
+printf("_____________________________________\nPRECISION:\n\n");
 
 		printf(			"%%.1d");
 	test =	printf(			"		|%.1d|\n", 55);
@@ -166,7 +166,7 @@ ft_putstr("_____________________________________\nPRECISION:\n\n");
 	t =	ft_printf(			"		|%11.1d|\n", -77);
 	result(test, t);
 
-	ft_putstr("_____________________________________\nNEGATIVE:\n\n");
+	printf("_____________________________________\nNEGATIVE:\n\n");
 
 		printf(			"%%.1d");
 	test =	printf(			"		|%.1d|\n", -7);
@@ -210,7 +210,7 @@ ft_putstr("_____________________________________\nPRECISION:\n\n");
 	result(test, t);
 
 
-ft_putstr("_____________________________________\nZERO:\n\n");
+printf("_____________________________________\nZERO:\n\n");
 
 		printf(			"%%d,0");
 	test =	printf(			"		|%d|\n", 0);
@@ -259,7 +259,7 @@ ft_putstr("_____________________________________\nZERO:\n\n");
 
 	printf("\n[Above: %d | %d OK]\n", g_test, g_pass);
 
-ft_putstr("_____________________________________\nERROR:\n\n");
+printf("_____________________________________\nERROR:\n\n");
 	
 		printf(			"%%--3.7d");
 	test =	printf(			"		|%----3.7d|\n", 55);
