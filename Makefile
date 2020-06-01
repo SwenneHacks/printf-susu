@@ -10,39 +10,53 @@
 #                                                                              #
 # **************************************************************************** #
 
-DIR 	= ../
+DIR 	= ..
 INC		= test.h
-PRINTF 	= libftprintf.a
+PRINTF 	= /lib/libftprintf.a
 FLAGS 	= -Wall -Werror -Wextra
 
 BTEST 	= test.c
 CTEST	= test_c.c
 DTEST	= test_d.c
+STEST	= test_s.c
 
 all:
 	@make re -C $(DIR)
+	@mkdir out
 
 clean:
 	@make fclean -C $(DIR)
-	@rm -rf output_* a.out*
+	@rm -rf out
 	@echo "---- Done cleaning everything.\n"
 
-testC: all
-	$(CC) $(DIR)$(PRINTF) $(CTEST) -o output_test_c
-	@echo ""
-	@./output_test_c
+re: clean all
 
-testD: all
-	$(CC) $(DIR)$(PRINTF) $(DTEST) -o output_test_d
+tc: re
+	@gcc $(DIR)$(PRINTF) $(CTEST) -o out/test_c
 	@echo ""
-	@./output_test_d
+	@./out/test_c
 
-testB: all
-	$(CC) $(DIR)$(PRINTF) $(BTEST) -o output_test
+td: re
+	@gcc $(DIR)$(PRINTF) $(DTEST) -o out/test_d
 	@echo ""
-	@./output_test
+	@./out/test_d
 
-fix: all
+tp: re
+	@gcc $(DIR)$(PRINTF) $(DTEST) -o out/test_d
+	@echo ""
+	@./out/test_d
+
+ts: re
+	@gcc $(DIR)$(PRINTF) $(STEST) -o out/test_s
+	@echo ""
+	@./out/test_s
+
+tb: re
+	@gcc $(DIR)$(PRINTF) $(BTEST) -o out/test
+	@echo ""
+	@./out/test
+
+fix: re
 	@gcc -g main.c $(DIR)$(PRINTF)
 	@echo "---- Done compiling for debugger.\n"
 	@./a.out
