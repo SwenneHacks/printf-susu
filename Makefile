@@ -10,15 +10,10 @@
 #                                                                              #
 # **************************************************************************** #
 
-DIR 	= ..
+DIR 	= ../
 INC		= test.h
-PRINTF 	= /lib/libftprintf.a
+PRINTF 	= libftprintf.a
 FLAGS 	= -Wall -Werror -Wextra
-
-BTEST 	= test.c
-CTEST	= test_c.c
-DTEST	= test_d.c
-STEST	= test_s.c
 
 all:
 	@make re -C $(DIR)
@@ -32,29 +27,40 @@ clean:
 re: clean all
 
 tc: re
-	@gcc $(DIR)$(PRINTF) $(CTEST) -o out/test_c
+	@gcc $(DIR)$(PRINTF) test_c.c -o out/test_c
 	@echo ""
 	@./out/test_c
+	@clean
 
-td: re
-	@gcc $(DIR)$(PRINTF) $(DTEST) -o out/test_d
+td: re clean
+	@gcc $(DIR)$(PRINTF) test_d.c -o out/test_d
 	@echo ""
 	@./out/test_d
 
-tp: re
-	@gcc $(DIR)$(PRINTF) $(DTEST) -o out/test_d
+tu: re clean 
+	@gcc $(DIR)$(PRINTF) test_u.c -o out/test_u
 	@echo ""
-	@./out/test_d
+	@./out/test_u
 
-ts: re
-	@gcc $(DIR)$(PRINTF) $(STEST) -o out/test_s
+tp: re clean
+	@gcc $(DIR)$(PRINTF) test_p.c -o out/test_p
+	@echo ""
+	@./out/test_p
+
+ts: re clean
+	@gcc $(DIR)$(PRINTF) test_s.c -o out/test_s
 	@echo ""
 	@./out/test_s
 
-tb: re
-	@gcc $(DIR)$(PRINTF) $(BTEST) -o out/test
+tx: re clean
+	@gcc $(DIR)$(PRINTF) test_x.c -o out/test_x
 	@echo ""
-	@./out/test
+	@./out/test_x
+
+tb: re clean
+	@gcc $(DIR)$(PRINTF) test.c -o out/test_bonus
+	@echo ""
+	@./out/test_bonus
 
 fix: re
 	@gcc -g main.c $(DIR)$(PRINTF)
