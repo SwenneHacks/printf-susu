@@ -222,6 +222,18 @@ printf("_____________________________________\nPRECISION:\n\n");
 	test =	printf(			"		|%-1.11d|\n", -77);
 	t =	ft_printf(			"		|%-1.11d|\n", -77);
 	result(test, t);
+		printf(			"%%-15.10d");
+	test =	printf(			"		|%-15.10d|\n", -77);
+	t =	ft_printf(			"		|%-15.10d|\n", -77);
+	result(test, t);
+		printf(			"%%15.10d");
+	test =	printf(			"		|%15.10d|\n", -77);
+	t =	ft_printf(			"		|%15.10d|\n", -77);
+	result(test, t);
+		printf(			"%%5.10d");
+	test =	printf(			"		|%5.10d|\n", -77);
+	t =	ft_printf(			"		|%5.10d|\n", -77);
+	result(test, t);
 
 printf("_____________________________________\nZERO:\n\n");
 
