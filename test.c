@@ -51,39 +51,39 @@ int		main(void)
 	result(test, t);
 //___________________________________________________________ STRINGS
 		printf(				"%%05s");
-	test =	printf(				"			|%09s|\n", s);
-	t =	ft_printf(				"			|%09s|\n", s);
+	test =	printf(				"		|%09s|\n", s);
+	t =	ft_printf(				"		|%09s|\n", s);
 	result(test, t);
 		printf(				"%%0-0s");
-	test =	printf(				"			|%0-0s|\n", s);
-	t =	ft_printf(				"			|%0-0s|\n", s);
+	test =	printf(				"		|%0-0s|\n", s);
+	t =	ft_printf(				"		|%0-0s|\n", s);
 	result(test, t);
 	
 printf("\n_____________________________________\nPERCENT: \n\n");
 	
 		printf(				"%%0-0%%");
-	test =	printf(				"			|%0-0%|\n");
-	t =	ft_printf(				"			|%0-0%|\n");
+	test =	printf(				"		|%0-0%|\n");
+	t =	ft_printf(				"		|%0-0%|\n");
 	result(test, t);
 		printf(				"%%05%%");
-	test =	printf(				"			|%05%|\n");
-	t =	ft_printf(				"			|%05%|\n");
+	test =	printf(				"		|%05%|\n");
+	t =	ft_printf(				"		|%05%|\n");
 	result(test, t);
 		printf(				"%%-5%%");
-	test =	printf(				"			|%-5%|\n");
-	t =	ft_printf(				"			|%-5%|\n");
+	test =	printf(				"		|%-5%|\n");
+	t =	ft_printf(				"		|%-5%|\n");
 	result(test, t);
 		printf(				"%%-05%%");
-	test =	printf(				"			|%-05%|\n");
-	t =	ft_printf(				"			|%-05%|\n");
+	test =	printf(				"		|%-05%|\n");
+	t =	ft_printf(				"		|%-05%|\n");
 	result(test, t);
 		printf(				"%%1.5%%");
-	test =	printf(				"			|%1.5%|\n");
-	t =	ft_printf(				"			|%1.5%|\n");
+	test =	printf(				"		|%1.5%|\n");
+	t =	ft_printf(				"		|%1.5%|\n");
 	result(test, t);
 		printf(				"%%5.1%%");
-	test =	printf(				"			|%5.1%|\n");
-	t =	ft_printf(				"			|%5.1%|\n");
+	test =	printf(				"		|%5.1%|\n");
+	t =	ft_printf(				"		|%5.1%|\n");
 	result(test, t);
 
 	printf("\n[Above: %d | %d OK]\n", g_test, g_pass);
@@ -92,6 +92,9 @@ printf("\n_____________________________________ TO FIX: \n\n");
 
 	test =	printf(			"%%u,-		|%u|\n", i);
 	t =	ft_printf(			"%%u,-		|%u|\n", i);
+	result(test, t);
+	test =	printf(			"%%u,&		|%u|\n", &i);
+	t =	ft_printf(			"%%u,&		|%u|\n", &i);
 	result(test, t);
 		printf(			"%%0-8.5d");
 	test =	printf(			"		|%0-8.5d|\n", 7);
