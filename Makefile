@@ -17,20 +17,19 @@ FLAGS 	= -Wall -Werror -Wextra
 
 all:
 	@make re -C $(DIR)
-	@mkdir out
+	@mkdir ./out
 
 clean:
 	@make fclean -C $(DIR)
-	@rm -rf out
+	@rm -rf ./out
 	@echo "---- Done cleaning everything.\n"
 
 re: clean all
 
-tc: re
+tc: re clean
 	@gcc $(DIR)$(PRINTF) test_c.c -o out/test_c
 	@echo ""
 	@./out/test_c
-	@clean
 
 td: re clean
 	@gcc $(DIR)$(PRINTF) test_d.c -o out/test_d
