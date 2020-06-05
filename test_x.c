@@ -28,7 +28,6 @@ int		main(void)
 	g_pass 			= 0;
 	g_test			= 0;
 
-
 	printf("\n____________________________________\nBASICS HEXA: \n\n");
 
 	    printf(			"%%x\n");
@@ -43,11 +42,10 @@ int		main(void)
     test =	printf(	    	"	   |%X|\n", d);
 	t =	ft_printf(	    	"	   |%X|\n", d);
 	result(test, t);
-	    printf(			"%%X\n");
-    test =	printf(	    	"	   |%X|\n", i);
-	t =	ft_printf(	    	"	   |%X|\n", i);
+	    printf(			"l max\n");
+    test =	printf(	    	"	   |%X|\n", "%x", 4294967295u);
+	t =	ft_printf(	    	"	   |%X|\n", "%x", 4294967295u);
 	result(test, t);
-
 
 	printf("\n____________________________________\nSMALL x: \n\n");
 	
@@ -129,9 +127,9 @@ printf("\n_____________________________________ FLAGS: \n\n");
     test =	printf(	    	"	   |%-9X|\n", d);
 	t =	ft_printf(	    	"	   |%-9X|\n", d);
 	result(test, t);
-	    printf(			"%%*.*x\n");
-    test =	printf(	    	"	   |%*.*x|\n", -10, -11, d);
-	t =	ft_printf(	    	"	   |%*.*x|\n", -10, -11, d);
+	    printf(			"%%-5.x\n");
+    test =	printf(	    	"	   |%*.x|\n", -5, d);
+	t =	ft_printf(	    	"	   |%*.x|\n", -5, d);
 	result(test, t);
 	    printf(			"%%0*.*x\n");
     test =	printf(	    	"	   |%*.*x|\n", 010, 011, d);
@@ -145,6 +143,10 @@ printf("\n_____________________________________ FLAGS: \n\n");
     test =	printf(	    	"	   |%*.*x|\n", -1, 1, d);
 	t =	ft_printf(	    	"	   |%*.*x|\n", -1, 1, d);
 	result(test, t);
+	    printf(			"%%-2.7x\n");
+    test =	printf(	    	"	   |%*.*x|\n", -2, 7, d);
+	t =	ft_printf(	    	"	   |%*.*x|\n", -2, 7, d);
+	result(test, t);
    		printf(			"%%10.11x\n");
     test =	printf(	    	"	   |%*.*x|\n", 10, 11, d);
 	t =	ft_printf(	    	"	   |%*.*x|\n", 10, 11, d);
@@ -153,18 +155,15 @@ printf("\n_____________________________________ FLAGS: \n\n");
     test =	printf(	    	"	   |%*.*x|\n", 5, 1, d);
 	t =	ft_printf(	    	"	   |%*.*x|\n", 5, 1, d);
 	result(test, t);
-	    printf(			"%%0*.*x\n");
-    test =	printf(	    	"	   |%0*.*x|\n", 10, 11, d);
-	t =	ft_printf(	    	"	   |%0*.*x|\n", 10, 11, d);
-	result(test, t);
-	    printf(			"%%-*.*x\n");
-    test =	printf(	    	"	   |%*.*x|\n", -10, -11, d);
-	t =	ft_printf(	    	"	   |%*.*x|\n", -10, -11, d);
-	result(test, t);
 	    printf(			"%%011.1x\n");
     test =	printf(	    	"	   |%0*.*x|\n", 11, 1, d);
 	t =	ft_printf(	    	"	   |%0*.*x|\n", 11, 1, d);
 	result(test, t);
+	    printf(			"%%0*.*x\n");
+    test =	printf(	    	"	   |%0*.*x|\n", 10, 11, d);
+	t =	ft_printf(	    	"	   |%0*.*x|\n", 10, 11, d);
+	result(test, t);
+
 
 printf("\n_____________________________________\nNEGATIVE: \n\n");
 
@@ -221,24 +220,54 @@ printf("\n_____________________________________\nNEGATIVE: \n\n");
     test =	printf(	    	"	   |%0*.*x|\n", 11, 1, i);
 	t =	ft_printf(	    	"	   |%0*.*x|\n", 11, 1, i);
 	result(test, t);
+	    printf(			"%%09.8x\n");
+    test =	printf(	    	"	   |%0*.*x|\n", 9, 8, i);
+	t =	ft_printf(	    	"	   |%0*.*x|\n", 9, 8, i);
+	result(test, t);
+	    printf(			"%%09.9x\n");
+    test =	printf(	    	"	   |%0*.*x|\n", 9, 9, i);
+	t =	ft_printf(	    	"	   |%0*.*x|\n", 9, 9, i);
+	result(test, t);
+	    printf(			"%%09.10x\n");
+    test =	printf(	    	"	   |%0*.*x|\n", 9, 10, i);
+	t =	ft_printf(	    	"	   |%0*.*x|\n", 9, 10, i);
+	result(test, t);
 	    printf(			"%%0-1.1x\n");
     test =	printf(	    	"	   |%0*.*x|\n", -11, -1, i);
 	t =	ft_printf(	    	"	   |%0*.*x|\n", -11, -1, i);
 	result(test, t);
 	
-printf("\n_____________________________________ ZERO: \n\n");
+	printf("\n\n[Above: %d | %d OK]\n", g_test, g_pass);
 
-		printf(			"%%*.*x\n");
-    test =	printf(	    	"	   |%*.*x|\n", -10, -11, 0);
-	t =	ft_printf(	    	"	   |%*.*x|\n", -10, -11, 0);
+printf("\n_____________________________________\n ZERO: \n\n");
+
+	    printf(			"%%x\n");
+    test =	printf(	    	"	   |%x|\n", 0);
+	t =	ft_printf(	    	"	   |%x|\n", 0);
 	result(test, t);
-	    printf(			"%%0*.*x\n");
-    test =	printf(	    	"	   |%0*.*x|\n", -10, -11, 0);
-	t =	ft_printf(	    	"	   |%0*.*x|\n", -10, -11, 0);
+	    printf(			"%%1x\n");
+    test =	printf(	    	"	   |%1x|\n", 0);
+	t =	ft_printf(	    	"	   |%1x|\n", 0);
 	result(test, t);
-	    printf(			"%%0*.*x\n");
-    test =	printf(	    	"	   |%*.*x|\n", 010, 011, 0);
-	t =	ft_printf(	    	"	   |%*.*x|\n", 010, 011, 0);
+	    printf(			"%%0x\n");
+    test =	printf(	    	"	   |%0x|\n", 0);
+	t =	ft_printf(	    	"	   |%0x|\n", 0);
+	result(test, t);
+	    printf(			"%%05x\n");
+    test =	printf(	    	"	   |%0*x|\n", 5, 0);
+	t =	ft_printf(	    	"	   |%0*x|\n", 5, 0);
+	result(test, t);
+        printf(			"%%5x\n");
+    test =	printf(	    	"	   |%5x|\n", 0);
+	t =	ft_printf(	    	"	   |%5x|\n", 0);
+	result(test, t);
+	    printf(			"%%-5.0x\n");
+    test =	printf(	    	"	   |%-5.0x|\n", 0);
+	t =	ft_printf(	    	"	   |%-5.0x|\n", 0);
+	result(test, t);
+	    printf(			"%%05.0x\n");
+    test =	printf(	    	"	   |%*.*x|\n", 5, 0, 0);
+	t =	ft_printf(	    	"	   |%*.*x|\n", 5, 0, 0);
 	result(test, t);
 	    printf(			"%%8.11x\n");
     test =	printf(	    	"	   |%*.*x|\n", 8, 11, 0);
@@ -252,9 +281,9 @@ printf("\n_____________________________________ ZERO: \n\n");
     test =	printf(	    	"	   |%*.*x|\n", 10, 11, 0);
 	t =	ft_printf(	    	"	   |%*.*x|\n", 10, 11, 0);
 	result(test, t);
-	    printf(			"%%5.1x\n");
-    test =	printf(	    	"	   |%*.*x|\n", 5, 1, 0);
-	t =	ft_printf(	    	"	   |%*.*x|\n", 5, 1, 0);
+	    printf(			"%%5.2x\n");
+    test =	printf(	    	"	   |%*.*x|\n", 5, 2, 0);
+	t =	ft_printf(	    	"	   |%*.*x|\n", 5, 2, 0);
 	result(test, t);
 	    printf(			"%%0*.*x\n");
     test =	printf(	    	"	   |%0*.*x|\n", 10, 11, 0);
@@ -264,9 +293,17 @@ printf("\n_____________________________________ ZERO: \n\n");
     test =	printf(	    	"	   |%0*.*x|\n", 11, 1, 0);
 	t =	ft_printf(	    	"	   |%0*.*x|\n", 11, 1, 0);
 	result(test, t);
+	    printf(			"%%.11x\n");
+    test =	printf(	    	"	   |%.*x|\n", 11, 0);
+	t =	ft_printf(	    	"	   |%.*x|\n", 11, 0);
+	result(test, t);
 	    printf(			"%%-11.3x\n");
     test =	printf(	    	"	   |%-*.*x|\n", 11, 3, 0);
 	t =	ft_printf(	    	"	   |%-*.*x|\n", 11, 3, 0);
+	result(test, t);
+	   printf(			"%%11.3x\n");
+    test =	printf(	    	"	   |%*.*x|\n", 11, 3, 0);
+	t =	ft_printf(	    	"	   |%*.*x|\n", 11, 3, 0);
 	result(test, t);
 	   printf(			"%%011.3x\n");
     test =	printf(	    	"	   |%0*.*x|\n", 11, 3, 0);
@@ -276,21 +313,41 @@ printf("\n_____________________________________ ZERO: \n\n");
     test =	printf(	    	"	   |%*.*x|\n", 11, 0, 0);
 	t =	ft_printf(	    	"	   |%*.*x|\n", 11, 0, 0);
 	result(test, t);
-	    printf(			"%%05.0x\n");
-    test =	printf(	    	"	   |%*.*x|\n", 5, 0, 0);
-	t =	ft_printf(	    	"	   |%*.*x|\n", 5, 0, 0);
+
+	printf("\n\n[Above: %d | %d OK]\n", g_test, g_pass);
+
+printf("\n_____________________________________\n ERROR: \n\n");
+
+	    printf(			"%%*.*x\n");
+    test =	printf(	    	"	   |%*.*x|\n", 10, 11, 0);
+	t =	ft_printf(	    	"	   |%*.*x|\n", 10, 11, 0);
 	result(test, t);
-	    printf(			"%%05x\n");
-    test =	printf(	    	"	   |%0*x|\n", 5, 0);
-	t =	ft_printf(	    	"	   |%0*x|\n", 5, 0);
+		printf(			"%%-*.*x\n");
+    test =	printf(	    	"	   |%-*.*x|\n", 10, 11, 0);
+	t =	ft_printf(	    	"	   |%-*.*x|\n", 10, 11, 0);
 	result(test, t);
-	    printf(			"%%-*.*x\n");
+	    printf(			"%%0-x\n");
+    test =	printf(	    	"	   |%0-*.*x|\n", 10, 11, 0);
+	t =	ft_printf(	    	"	   |%0-*.*x|\n", 10, 11, 0);
+	result(test, t);
+		printf(			"%%-*.*x\n");
     test =	printf(	    	"	   |%*.*x|\n", -10, -11, 0);
 	t =	ft_printf(	    	"	   |%*.*x|\n", -10, -11, 0);
 	result(test, t);
+	    printf(			"%%0*.*x\n");
+    test =	printf(	    	"	   |%0*.*x|\n", -10, -11, 0);
+	t =	ft_printf(	    	"	   |%0*.*x|\n", -10, -11, 0);
+	result(test, t);
+	    printf(			"%%-*.*x\n");
+    test =	printf(	    	"	   |%*.*x|\n", -10, -11, d);
+	t =	ft_printf(	    	"	   |%*.*x|\n", -10, -11, d);
+	result(test, t);
+	    printf(			"%%*.*x\n");
+    test =	printf(	    	"	   |%*.*x|\n", -10, -11, d);
+	t =	ft_printf(	    	"	   |%*.*x|\n", -10, -11, d);
+	result(test, t);
 
-printf("\n_____________________________________ TO FIX: \n\n");
 
-	printf("\n[Above: %d | %d OK]\n\n", g_test, g_pass);
+	printf("\n[RESULT %d | %d OK]\n\n", g_test, g_pass);
 
 }
