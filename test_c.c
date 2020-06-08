@@ -62,32 +62,20 @@ int		main(void)
 	test =	printf(			"%%-4c 		|%-4c|\n", c);
 	t =	ft_printf(			"%%-4c 		|%-4c|\n", c);
 	result(test, t);
-	test =	printf(			"%%*c,4		|%.c|\n", c);
-	t =	ft_printf(			"%%*c,4		|%.c|\n", c);
-	result(test, t);
 	test =	printf(			"%%cc		|%c%c|\n", c, i);
 	t =	ft_printf(			"%%cc		|%c%c|\n", c, i);
 	result(test, t);
 	test =	printf(			"%%ccc		|%c%c%c|\n", c, d, 7);
 	t =	ft_printf(			"%%ccc		|%c%c%c|\n", c, d, 7);
 	result(test, t);
-	test =	printf(			"%%0c 		|%0c|\n", c);
-	t =	ft_printf(			"%%0c 		|%0c|\n", c);
-	result(test, t);
-	test =	printf(			"%%05c 		|%05c|\n", c);
-	t =	ft_printf(			"%%05c 		|%05c|\n", c);
-	result(test, t);
 	test =	printf(			"%%-c 		|%-c|\n", c);
 	t =	ft_printf(			"%%-c 		|%-c|\n", c);
 	result(test, t);
+	test =	printf(			"%%--c 		|%-*c|\n", -3, c);
+	t =	ft_printf(			"%%--c 		|%-*c|\n", -3, c);
+	result(test, t);
 	test =	printf(			"%%c 		|%c|\n", -0);
 	t =	ft_printf(			"%%c 		|%c|\n", -0);
-	result(test, t);
-	test =	printf(			"%%c 		|%c|\n", NULL);
-	t =	ft_printf(			"%%c 		|%c|\n", NULL);
-	result(test, t);
-	test =	printf(			"%%c 		|%c|\n");
-	t =	ft_printf(			"%%c 		|%c|\n");
 	result(test, t);
 	test =	printf(			"lvlup 		|%2c%3c%4c%1c%2c%3c%4c%1c%2c%3c%4c%1c%2c%1c%3c|\n",' ','!','"','#','$','%','&','\'','(',')','*','+',',','-','.');
 	t =	ft_printf(			"lvlup 		|%2c%3c%4c%1c%2c%3c%4c%1c%2c%3c%4c%1c%2c%1c%3c|\n",' ','!','"','#','$','%','&','\'','(',')','*','+',',','-','.');
@@ -96,6 +84,30 @@ int		main(void)
 	t =	ft_printf(			"lvl - 		|%-2c%-3c%-4c%-1c%-2c%-3c%-4c%-1c%-2c%-3c%-4c%-1c%-2c%-1c%-3c|\n",' ','!','"','#','$','%','&','\'','(',')','*','+',',','-','.');
 	result(test, t);
 	
+	printf("_____________________________________\nWARNINGS: \n\n");
+
+	test =	printf(			"no arg 		|%c|\n");
+	t =	ft_printf(			"no arg 		|%c|\n");
+	result(test, t);
+	test =	printf(			"%%*c,4		|%.*c|\n", 4, c);
+	t =	ft_printf(			"%%*c,4		|%.*c|\n", 4, c);
+	result(test, t);
+	test =	printf(			"%%.10c		|%.10c|\n", c);
+	t =	ft_printf(			"%%.10c		|%.10c|\n", c);
+	result(test, t);
+	test =	printf(			"%%c 		|%c|\n", NULL);
+	t =	ft_printf(			"%%c 		|%c|\n", NULL);
+	result(test, t);
+	test =	printf(			"%%0c 		|%0c|\n", c);
+	t =	ft_printf(			"%%0c 		|%0c|\n", c);
+	result(test, t);
+	test =	printf(			"%%05c 		|%05c|\n", c);
+	t =	ft_printf(			"%%05c 		|%05c|\n", c);
+	result(test, t);
+	test =	printf(			"%%-05c 		|%-05c|\n", c);
+	t =	ft_printf(			"%%-05c 		|%-05c|\n", c);
+	result(test, t);
+
 	printf("\n RESULT: %d correct out of %d tests\n\n", g_pass, g_test);
 
 	return (0);
