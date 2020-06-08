@@ -20,7 +20,7 @@ void	result(int test, int ft)
 int		main(void)
 {
 	int				test;
-	unsigned int	i = -777777;
+	unsigned int	i = -55;
 	int				d = 55;
 	int				t;
 	g_pass 			= 0;
