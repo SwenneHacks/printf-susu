@@ -286,14 +286,6 @@ printf("_____________________________________\nZERO:\n\n");
 
 printf("_____________________________________\nERROR:\n\n");
 	
-		printf(			"no arg");
-	test =	printf(			"		|%d|\n");
-	t =	ft_printf(			"		|%d|\n");
-	result(test, t);
-		printf(			"lvl up");
-	test =	printf(			"		|%d%d%d%d%d%d%d%d|\n", 'a','b',2,0,-1,1+3,-0);
-	t =	ft_printf(			"		|%d%d%d%d%d%d%d%d|\n", 'a','b',2,0,-1,1+3,-0);
-	result(test, t);
 		printf(			"%%+d"); 		
 	test =	printf(			"		|%+d|\n", i);
 	t =	ft_printf(			"		|%+d|\n", i);
@@ -401,6 +393,17 @@ printf("_____________________________________\nERROR:\n\n");
 		printf(			"%% -5d,-");
 	test =	printf(			"		|% -5d|\n", i);
 	t =	ft_printf(			"		|% -5d|\n", i);
+	result(test, t);
+
+printf("\n____________________________________\nWARNINGS: \n\n");
+
+		printf(			"no arg");
+	test =	printf(			"		|%d|\n");
+	t =	ft_printf(			"		|%d|\n");
+	result(test, t);
+		printf(			"lvl up");
+	test =	printf(			"		|%d%d%d%d%d%d%d%d|\n", 'a','b',2,0,-1,1+3,-0);
+	t =	ft_printf(			"		|%d%d%d%d%d%d%d%d|\n", 'a','b',2,0,-1,1+3,-0);
 	result(test, t);
 
 	printf("\n[RESULT: tested %d | %d OK]\n\n", g_test, g_pass);
