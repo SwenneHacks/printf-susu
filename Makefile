@@ -13,7 +13,6 @@
 DIR 	= ../
 INC		= test.h
 PRINTF 	= libftprintf.a
-FLAGS 	= -Wall -Werror -Wextra
 
 all:
 	@make re -C $(DIR)
