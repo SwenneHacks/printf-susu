@@ -25,12 +25,11 @@ int		main(void)
 	char			c = 'c';
 	char			*s = "Here";
 	int				t;
+	int				p = &t;
 	g_pass 			= 0;
 	g_test			= 0;
 
-	printf("\n____________________________________\nDONE: \n\n");
-
-//____________________________________________________________ POINTER
+printf("\n____________________________________\nPOINTER (%%p): \n\n");
 	
 		printf(			"arg 1");
 	test =	printf(			" 	|%p|\n", 1);
@@ -52,20 +51,36 @@ int		main(void)
 	test =	printf(			" 	|%p|\n", &s);
 	t =	ft_printf(			" 	|%p|\n", &s);
 	result(test, t);
+		printf(			"&d");
+	test =	printf(			" 	|%p|\n", &d);
+	t =	ft_printf(			" 	|%p|\n", &d);
+	result(test, t);
+		printf(			"&15c");
+	test =	printf(			" 	|%15p|\n", &c);
+	t =	ft_printf(			" 	|%15p|\n", &c);
+	result(test, t);
+		printf(			"15.20");
+	test =	printf(			" 	|%15.20p|\n", &s);
+	t =	ft_printf(			" 	|%15.20p|\n", &s);
+	result(test, t);
 
-printf("\n_____________________________________\nZERO: \n\n");
+printf("_____________________________________\nZERO: \n\n");
 	
 		printf(			"p,0");
 	test =	printf(			"		|%p|\n", 0);
 	t =	ft_printf(			"		|%p|\n", 0);
 	result(test, t);
-		printf(			"-p");
-	test =	printf(			"		|%-p|\n", 0);
-	t =	ft_printf(			"		|%-p|\n", 0);
+		printf(			".0p");
+	test =	printf(			"		|%.0p|\n", 0);
+	t =	ft_printf(			"		|%.0p|\n", 0);
 	result(test, t);
 		printf(			"0p");
 	test =	printf(			"		|%0p|\n", 0);
 	t =	ft_printf(			"		|%0p|\n", 0);
+	result(test, t);
+		printf(			"-p");
+	test =	printf(			"		|%-p|\n", 0);
+	t =	ft_printf(			"		|%-p|\n", 0);
 	result(test, t);
 		printf(			" p");
 	test =	printf(			"		|% p|\n", 0);
