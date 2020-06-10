@@ -1,6 +1,20 @@
-# ft_Printf
-Codam's [42 Network] write-your-own-printf Project
->int         ft_printf ( const char * str, ... );
+# My ft_printf tester:
+Codam College [42 Network] write-your-own-printf Project.
+
+## How to test:
+
+**(Makefile rules)**
+
+Testing %c: ``` make tc ```
+Testing %d: ``` make td ```
+Testing %x: ``` make tx ```
+Testing %p: ``` make tp ```
+Testing %s: ``` make ts ```
+Testing %u: ``` make tu ```
+Test bonus: ``` make tb ```
+
+# Introduction to Printf:
+> int         ft\_printf ( const char \* str, ... );
 
 ## Format:
 
@@ -81,10 +95,6 @@ sSpdDioOuUxXcCbneEfFgGaA
 - X - Caption Letters Hexadecimal (base 16)
 - p - Pointer Address (base 16 - without ox)
 - %% - Prints a literal % character (this type doesn't accept any flags, width, precision, length fields).
-
-extra
-
-f - Decimal Float Point
 
 
 
