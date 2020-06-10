@@ -5,13 +5,13 @@ Codam College [42 Network] write-your-own-printf Project.
 
 **(Makefile rules)**
 
-Testing %c: ``` make tc ```
-Testing %d: ``` make td ```
-Testing %x: ``` make tx ```
-Testing %p: ``` make tp ```
-Testing %s: ``` make ts ```
-Testing %u: ``` make tu ```
-Test bonus: ``` make tb ```
+>Testing %c: ``` make tc ```
+>Testing %d: ``` make td ```
+>Testing %x: ``` make tx ```
+>Testing %p: ``` make tp ```
+>Testing %s: ``` make ts ```
+>Testing %u: ``` make tu ```
+>Test bonus: ``` make tb ```
 
 # Introduction to Printf:
 > int         ft\_printf ( const char \* str, ... );
@@ -19,8 +19,26 @@ Test bonus: ``` make tb ```
 ## Format:
 
 ```bash
-ft_printf("[%][flags][width][.precision][conversion]", arguments)
+ft_printf("[%][%double][flags][width/*][.precision/*][conversion/specifier]", arguments)
 ```
+
+## Conversions:
+
+```bash
+sSpdDioOuUxXcCbneEfFgGaA
+```
+
+- c - Character
+- s - String of Characters (null-terminated)
+- d - Signed Decimal Number (base 10)
+- i - Signed integer. (base 10)
+- u - Unsigned Decimal Number (base 10)
+- o - Signed Octal Number (base 8)
+- x - Unsigned Hexadecimal (base 16)
+- X - Caption Letters Hexadecimal (base 16)
+- p - Pointer Address (base 16 - without ox)
+- %% - Prints a literal % character (this type doesn't accept any flags, width, precision, length fields).
+
 
 ## Flags:
 
@@ -76,26 +94,6 @@ For %c type:'
 [. *]
 > The precision is not specified in the format string, but as an additional argument (value int) preceding the argument that has to be formatted. 
 >The result is padded with space characters (by default), if required, on the left when right-justified, or on the right if left-justified.
-
-
-
-## Conversions:
-
-```bash
-sSpdDioOuUxXcCbneEfFgGaA
-```
-
-- c - Character
-- s - String of Characters (null-terminated)
-- d - Signed Decimal Number (base 10)
-- i - Signed integer. (base 10)
-- u - Unsigned Decimal Number (base 10)
-- o - Signed Octal Number (base 8)
-- x - Unsigned Hexadecimal (base 16)
-- X - Caption Letters Hexadecimal (base 16)
-- p - Pointer Address (base 16 - without ox)
-- %% - Prints a literal % character (this type doesn't accept any flags, width, precision, length fields).
-
 
 
 ## Special Characters:
