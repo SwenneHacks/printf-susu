@@ -5,64 +5,64 @@
 #                                                      +:+                     #
 #    By: swofferh <swofferh@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
-#    Created: 2019/12/16 17:46:43 by swofferh       #+#    #+#                 #
-#    Updated: 2019/12/22 21:42:57 by swofferh      ########   odam.nl          #
+#    Created: 2019/12/16 17:46:43 by swofferh      #+#    #+#                  #
+#    Updated: 2020/06/10 21:35:05 by sofferha      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 DIR 	= ../vogesphere/
 INC		= test.h
-PRINTF 	= libftprintf.a
 
 all:
 	@make re -C $(DIR)
-	@mkdir -p ./out
 
 clean:
-	@make fclean -C $(DIR)
-	@rm -rf ./out
-	@echo "---- Done cleaning everything at (./test).\n"
+	@rm -rf a.out
 
 tc: all
-	@gcc $(DIR)$(PRINTF) test_c.c -o out/test_c
+	@gcc -I $(INC) $(DIR)libftprintf.a test_c.c
 	@echo ""
-	@./out/test_c
+	@./a.out
+	@make clean
 
 td: all
-	@gcc $(DIR)$(PRINTF) test_d.c -o out/test_d
+	@gcc -I $(INC) $(DIR)libftprintf.a test_d.c 
 	@echo ""
-	@./out/test_d
+	@./a.out
+	@make clean
 
 tu: all 
-	@gcc $(DIR)$(PRINTF) test_u.c -o out/test_u
+	@gcc -I $(INC) $(DIR)libftprintf.a test_u.c 
 	@echo ""
-	@./out/test_u
+	@./a.out
+	@make clean
 
 tp: all
-	@gcc $(DIR)$(PRINTF) test_p.c -o out/test_p
+	@gcc -I $(INC) $(DIR)libftprintf.a test_p.c 
 	@echo ""
-	@./out/test_p
+	@./a.out
+	@make clean
 
 ts: all
-	@gcc $(DIR)$(PRINTF) test_s.c -o out/test_s
+	@gcc -I $(INC) $(DIR)libftprintf.a test_s.c 
 	@echo ""
-	@./out/test_s
+	@./a.out
+	@make clean
 
 tx: all
-	@gcc $(DIR)$(PRINTF) test_x.c -o out/test_x
+	@gcc -I $(INC) $(DIR)libftprintf.a test_x.c 
 	@echo ""
-	@./out/test_x
+	@./a.out
+	@make clean
 
 tb: all
-	@gcc $(DIR)$(PRINTF) test.c -o out/test_bonus
+	@gcc -I $(INC) $(DIR)libftprintf.a test.c
 	@echo ""
-	@./out/test_bonus
+	@./a.out
+	@make clean
 
 fix: all
-	@gcc -g main.c $(DIR)$(PRINTF)
+	@gcc -I $(INC) -g main.c $(DIR)libftprintf.a
 	@echo "---- Done compiling for debugger.\n"
 	@./a.out
-
-add:
-	git add test* Makefile README.md
-	git status
+	@make clean
