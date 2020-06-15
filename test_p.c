@@ -20,6 +20,7 @@ void	result(int test, int ft)
 int		main(void)
 {
 	int				test;
+	int				r = 0;
 	unsigned int	i = -7;
 	int				d = 55;
 	char			c = 'c';
@@ -143,20 +144,13 @@ printf("_____________________________________\nZERO: \n\n");
 	t =	ft_printf(			"		|%2.10p|\n", 0);
 	result(test, t);
 
-printf("\n_____________________________________\nFLAGS: \n\n");
+	printf("\n  [Above: %d | %d OK]\n\n", g_test, g_pass);
 
+printf("\n_____________________________________\nFLAGS: \n\n");
 
 		printf(			"-p");
 	test =	printf(			"	|%-p|\n", i);
 	t =	ft_printf(			"	|%-p|\n", i);
-	result(test, t);
-		printf(			" p");
-	test =	printf(			"	|% p|\n", i);
-	t =	ft_printf(			"	|% p|\n", i);
-	result(test, t);
-		printf(			"+p");
-	test =	printf(			"	|%+p|\n", i);
-	t =	ft_printf(			"	|%+p|\n", i);
 	result(test, t);
 		printf(			"0p");
 	test =	printf(			"	|%0p|\n", i);
@@ -215,8 +209,24 @@ printf("\n_____________________________________\nFLAGS: \n\n");
 	t =	ft_printf(			"	|%-15p|\n", -1);
 	result(test, t);
 
-
 	printf("\n  [Above: %d | %d OK]\n\n", g_test, g_pass);
+
+printf("\n_____________________________________\nNEXT LVL: \n\n");
+
+		printf(			" p");
+	test =	printf(			"	|% p|\n", i);
+	t =	ft_printf(			"	|% p|\n", i);
+	result(test, t);
+		printf(			"+p");
+	test =	printf(			"	|%+p|\n", i);
+	t =	ft_printf(			"	|%+p|\n", i);
+	result(test, t);
+		printf(			"&int0");
+	test =	printf(			"	|%p|\n", &r);
+	t =	ft_printf(			"	|%p|\n", &r);
+	result(test, t);
+
+	printf("\n  [RESULT: %d | %d OK]\n\n", g_test, g_pass);
 
 	return (0);
 }

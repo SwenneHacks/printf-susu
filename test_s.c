@@ -100,7 +100,32 @@ int		main(void)
 	t =	ft_printf(				"		|%ss|\n", s + 2);
 	result(test, t);
 
-	printf("\n[Above: %d | %d OK]\n", g_test, g_pass);
+	printf("\n	[Above: %d | %d OK]\n", g_test, g_pass);
+
+printf("\n_____________________________________\nNULL: \n\n");
+
+		printf(				"%%s,NULL");
+	test =	printf(				"		|%s|\n", NULL);
+	t =	ft_printf(				"		|%s|\n", NULL);
+	result(test, t);
+		printf(				"%%011s");
+	test =	printf(				"		|%011s|\n", NULL);
+	t =	ft_printf(				"		|%011s|\n", NULL);
+	result(test, t);
+		printf(				"%%-0.8s");
+	test =	printf(				"		|%-0.8s|\n", NULL);
+	t =	ft_printf(				"		|%-0.8s|\n", NULL);
+	result(test, t);
+		printf(				"after\\0");
+	test =	printf(				"		|%s|\n", "this is ok\0but this one should be hidden");
+	t =	ft_printf(				"		|%s|\n", "this is ok\0but this one should be hidden");
+	result(test, t);
+		printf(				"%%-5s");
+	test =	printf(				"		|%-5s|\n", NULL);
+	t =	ft_printf(				"		|%-5s|\n", NULL);
+	result(test, t);
+
+	printf("\n	[Above: %d | %d OK]\n", g_test, g_pass);
 
 printf("\n_____________________________________\nUN.BEHAVIOR: \n\n");
 
@@ -113,7 +138,7 @@ printf("\n_____________________________________\nUN.BEHAVIOR: \n\n");
 	t =	ft_printf(				"		|%0-5s|\n", s);
 	result(test, t);
 
-	printf("\n[RESULT: %d | %d OK ] \n\n", g_test, g_pass);
+	printf("\n	[RESULT: %d | %d OK ] \n\n", g_test, g_pass);
 
 	return (0);
 }

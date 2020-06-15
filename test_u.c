@@ -57,14 +57,6 @@ printf("\n_____________________________________\nZERO: \n\n");
 	test =	printf(			"		|%0u|\n", 0);
 	t =	ft_printf(			"		|%0u|\n", 0);
 	result(test, t);
-		printf(			" u");
-	test =	printf(			"		|% u|\n", 0);
-	t =	ft_printf(			"		|% u|\n", 0);
-	result(test, t);
-		printf(			"+u");
-	test =	printf(			"		|%+u|\n", 0);
-	t =	ft_printf(			"		|%+u|\n", 0);
-	result(test, t);
 		printf(			"10u");
 	test =	printf(			"		|%10u|\n", 0);
 	t =	ft_printf(			"		|%10u|\n", 0);
@@ -221,10 +213,7 @@ printf("\n_____________________________________\nNEGATIVE: \n\n");
 	t =	ft_printf(			"	|%00.15u|\n", i);
 	result(test, t);
 
-
-
 printf("\n_____________________________________\nFLAGS: \n\n");
-
 
 		printf(			"-u");
 	test =	printf(			"	|%-u|\n", d);
@@ -342,9 +331,20 @@ printf("\n_____________________________________\nFLAGS: \n\n");
 	test =	printf(			"	|%8.10u|\n", 8375);
 	t =	ft_printf(			"	|%8.10u|\n", 8375);
 	result(test, t);
+	
+	printf("\n  [Above: %d | %d OK]\n", g_test, g_pass);
 
+printf("_____________________________________\nBONUS: \n\n");
+		printf(			" u");
+	test =	printf(			"		|% u|\n", 0);
+	t =	ft_printf(			"		|% u|\n", 0);
+	result(test, t);
+		printf(			"+u");
+	test =	printf(			"		|%+u|\n", 0);
+	t =	ft_printf(			"		|%+u|\n", 0);
+	result(test, t);
 
-	printf("\n  [Above: %d | %d OK]\n\n", g_test, g_pass);
+	printf("\n  [RESULT: %d | %d OK]\n\n", g_pass, g_pass);
 
 	return (0);
 }
