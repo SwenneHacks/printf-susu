@@ -1,27 +1,11 @@
 
 #include "test.h"
 
-void	result(int test, int ft)
-{
-	if (test == ft)
-	{
-		printf("				PASS\n");
-		g_pass++;
-	}
-	else
-	{
-		printf("				FAIL\n");
-		printf("				pf[%d]\n", test - 5);
-		printf("				ft[%d]\n\n", ft - 5);
-	}
-	g_test++;
-}
-
 int		main(void)
 {
 	int				test;
 	int				t;
-	unsigned int	i = INT_MAX + 1;
+	unsigned int	i = 2147483647 + 1;
 	int				d = -0;
 	char			c = '*';
 	g_pass 			= 0;
@@ -106,6 +90,14 @@ int		main(void)
 	result(test, t);
 	test =	printf(			"%%-05c 		|%-05c|\n", c);
 	t =	ft_printf(			"%%-05c 		|%-05c|\n", c);
+	result(test, t);
+
+	test = printf(" (%d)\n", printf("-0*0: |%-0*c|", 0, 0));
+	t = ft_printf(" (%d)\n", ft_printf("-0*0: |%-0*c|", 0, 0));
+	result(test, t);
+
+	test = printf(" (%d)\n", printf("-0*3: |%-0*c|", 3, 0));
+	t = ft_printf(" (%d)\n", ft_printf("-0*3: |%-0*c|", 3, 0));
 	result(test, t);
 
 	printf("\n RESULT: %d correct out of %d tests\n\n", g_pass, g_test);

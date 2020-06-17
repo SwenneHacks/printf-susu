@@ -1,22 +1,6 @@
 
 #include "test.h"
 
-void	result(int test, int ft)
-{
-	if (test == ft)
-	{
-		printf("				PASS\n");
-		g_pass++;
-	}
-	else
-	{
-		printf("				FAIL\n");
-		printf("				pf[%d]\n", test - 5);
-		printf("				ft[%d]\n\n", ft - 5);
-	}
-	g_test++;
-}
-
 int		main(void)
 {
 	int				test;

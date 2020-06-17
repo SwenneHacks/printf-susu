@@ -6,63 +6,67 @@
 #    By: swofferh <swofferh@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/12/16 17:46:43 by swofferh      #+#    #+#                  #
-#    Updated: 2020/06/10 21:35:05 by sofferha      ########   odam.nl          #
+#    Updated: 2020/06/17 18:40:59 by swofferh      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-DIR 	= ../vogesphere/
-INC		= test.h
+DIR = ../
+LIB = libftprintf.a
+INC = test.h
+TEST = test.c
 
 all:
-	@make re -C $(DIR)
+	@make re -C ..
+	@gcc -I $(INC) $(DIR)$(LIB) $(TEST)
 
-clean:
-	@rm -rf a.out
-
-tc: all
-	@gcc -I $(INC) $(DIR)libftprintf.a test_c.c
-	@echo ""
+td:
+	@make re -C ..
+	@gcc -I $(INC) $(TEST) $(DIR)$(LIB) test_d.c
 	@./a.out
 	@make clean
 
-td: all
-	@gcc -I $(INC) $(DIR)libftprintf.a test_d.c 
-	@echo ""
+tu:
+	@make re -C ..
+	@gcc -I $(INC) $(TEST) $(DIR)$(LIB) test_u.c
 	@./a.out
 	@make clean
 
-tu: all 
-	@gcc -I $(INC) $(DIR)libftprintf.a test_u.c 
-	@echo ""
+tp:
+	@make re -C ..
+	@gcc -I $(INC) $(TEST) $(DIR)$(LIB) test_p.c
 	@./a.out
 	@make clean
 
-tp: all
-	@gcc -I $(INC) $(DIR)libftprintf.a test_p.c 
-	@echo ""
+ts:
+	@make re -C ..
+	@gcc -I $(INC) $(TEST) $(DIR)$(LIB) test_s.c
 	@./a.out
 	@make clean
 
-ts: all
-	@gcc -I $(INC) $(DIR)libftprintf.a test_s.c 
-	@echo ""
+tx:
+	@make re -C ..
+	@gcc -I $(INC) $(TEST) $(DIR)$(LIB) test_x.c
 	@./a.out
 	@make clean
 
-tx: all
-	@gcc -I $(INC) $(DIR)libftprintf.a test_x.c 
-	@echo ""
+tc:
+	@make re -C ..
+	@gcc -I $(INC) $(TEST) $(DIR)$(LIB) test_c.c
 	@./a.out
 	@make clean
 
-tb: all
-	@gcc -I $(INC) $(DIR)libftprintf.a test.c
-	@echo ""
+tb:
+	@make re -C ..
+	@gcc -I $(INC) $(TEST) $(DIR)$(LIB) test_b.c
 	@./a.out
 	@make clean
 
-fix: all
-	@gcc -I $(INC) -g main.c $(DIR)libftprintf.a
+bug:
+	@make re -C ..
+	@gcc -I $(INC) -g main.c $(TEST) $(DIR)$(LIB)
 	@echo "---- Done compiling for debugger.\n"
 	@./a.out
 	@make clean
+	
+clean:
+	rm -rf a.out

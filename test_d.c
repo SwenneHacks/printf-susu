@@ -1,22 +1,6 @@
 
 #include "test.h"
 
-void	result(int test, int ft)
-{
-	if (test == ft)
-	{
-		printf("				PASS\n");
-		g_pass++;
-	}
-	else
-	{
-		printf("				FAIL\n");
-		printf("				pf[%d]\n", test - 5);
-		printf("				ft[%d]\n\n", ft - 5);
-	}
-	g_test++;
-}
-
 int		main(void)
 {
 	int				test;
@@ -450,6 +434,13 @@ printf("\n____________________________________\nWARNINGS: \n\n");
 		printf(			"lvl up");
 	test =	printf(			"		|%d%d%d%d%d%d%d%d|\n", 'a','b',2,0,-1,1+3,-0);
 	t =	ft_printf(			"		|%d%d%d%d%d%d%d%d|\n", 'a','b',2,0,-1,1+3,-0);
+	result(test, t);
+
+	test = printf(" (%d)\n", printf("-0*3: |%-0*i|", 3, 0));
+	t = ft_printf(" (%d)\n", ft_printf("-0*3: |%-0*i|", 3, 0));
+	result(test, t);
+	test = printf(" (%d)\n", printf("08.*(-4): |%08.*i|", -4, 42));
+	t = ft_printf(" (%d)\n", ft_printf("08.*(-4): |%08.*i|", -4, 42));
 	result(test, t);
 
 	printf("\n[RESULT %d | %d OK]\n\n", g_test, g_pass);
