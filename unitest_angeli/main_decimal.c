@@ -6,7 +6,7 @@
 /*   By: limartin <limartin@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/15 19:45:27 by limartin      #+#    #+#                 */
-/*   Updated: 2020/06/17 20:19:37 by swofferh      ########   odam.nl         */
+/*   Updated: 2020/06/19 21:33:03 by swofferh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -265,7 +265,7 @@ int		main(void)
 	ft_printf("This is a bogus ft_printf conversion with double precision: %-0*..*b", 13, 7);
 	}
 
-	printf("					\x1b[31m FAILS: %d \x1b[0m\n\n\n", g_fail);
+	printf("		\x1b[31m FAILS: %d \x1b[0m\n\n\n", g_fail);
 
 	return (0);
 }

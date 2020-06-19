@@ -6,7 +6,7 @@
 /*   By: swofferh <swofferh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/08 22:27:52 by swofferh      #+#    #+#                 */
-/*   Updated: 2020/06/17 19:38:26 by swofferh      ########   odam.nl         */
+/*   Updated: 2020/06/19 21:13:52 by swofferh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define TEST_H
 
 # include <stdio.h>
-# include "../printf.h"
+# include "printf.h"
 
 int g_pass;
 int g_test;

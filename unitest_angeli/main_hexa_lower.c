@@ -6,7 +6,7 @@
 /*   By: limartin <limartin@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/15 19:45:27 by limartin      #+#    #+#                 */
-/*   Updated: 2020/06/17 21:20:00 by swofferh      ########   odam.nl         */
+/*   Updated: 2020/06/19 21:33:17 by swofferh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int		main(void)
 
 	test = printf(" (%d)\n", printf("Handling minimum field width"));
 	t = ft_printf(" (%d)\n", ft_printf("Handling minimum field width"));
-result(test, t);
+	result(test, t);
 
 	test = printf(" (%d)\n", printf("(0) Mfw 0: |%0x|", 0));
 	t = ft_printf(" (%d)\n", ft_printf("(0) Mfw 0: |%0x|", 0));
@@ -1148,7 +1148,7 @@ result(test, t);
 	}
 
 
-	printf("				\x1b[31m FAILS: %d \x1b[0m\n\n\n", g_fail);
+	printf("		\x1b[31m FAILS: %d \x1b[0m\n\n\n", g_fail);
 
 	return (0);
 }

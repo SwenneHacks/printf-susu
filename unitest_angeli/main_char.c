@@ -6,7 +6,7 @@
 /*   By: limartin <limartin@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/15 19:45:27 by limartin      #+#    #+#                 */
-/*   Updated: 2020/06/17 20:13:18 by swofferh      ########   odam.nl         */
+/*   Updated: 2020/06/19 21:33:08 by swofferh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -743,6 +743,6 @@ int		main(void)
 	t = ft_printf(" (%d)\n", ft_printf("*4.*0x10: |%*.*c|", 4, 0x10, 0));
 	result(test, t);
 
-	printf("				\x1b[31m FAILS: %d \x1b[0m\n\n\n", g_fail);
+	printf("		\x1b[31m FAILS: %d \x1b[0m\n\n\n", g_fail);
 
 }
