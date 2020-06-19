@@ -6,7 +6,7 @@
 #    By: swofferh <swofferh@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/12/16 17:46:43 by swofferh      #+#    #+#                  #
-#    Updated: 2020/06/19 13:15:45 by sofferha      ########   odam.nl          #
+#    Updated: 2020/06/19 13:18:12 by sofferha      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -69,4 +69,4 @@ bug:
 	@make clean
 	
 clean:
-	rm -rf a.out
+	@rm -rf a.out
