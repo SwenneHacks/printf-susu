@@ -3,7 +3,7 @@
 # define TEST_H
 
 # include <stdio.h>
-# include "../printf.h"
+# include "printf.h"
 
 int g_pass;
 int g_test;

@@ -6,64 +6,64 @@
 #    By: swofferh <swofferh@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/12/16 17:46:43 by swofferh      #+#    #+#                  #
-#    Updated: 2020/06/17 18:40:59 by swofferh      ########   odam.nl          #
+#    Updated: 2020/06/19 13:15:45 by sofferha      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-DIR = ../
+DIR = ../github/voge/
 LIB = libftprintf.a
-INC = test.h
+INC = printf.h
 TEST = test.c
 
 all:
-	@make re -C ..
-	@gcc -I $(INC) $(DIR)$(LIB) $(TEST)
+	@make re -C $(DIR)
+	@gcc -I $(DIR)$(INC) $(DIR)$(LIB) $(TEST)
 
 td:
-	@make re -C ..
-	@gcc -I $(INC) $(TEST) $(DIR)$(LIB) test_d.c
+	@make re -C $(DIR)
+	@gcc -I $(DIR)$(INC) $(TEST) $(DIR)$(LIB) test_d.c
 	@./a.out
 	@make clean
 
 tu:
-	@make re -C ..
-	@gcc -I $(INC) $(TEST) $(DIR)$(LIB) test_u.c
+	@make re -C $(DIR)
+	@gcc -I $(DIR)$(INC) $(TEST) $(DIR)$(LIB) test_u.c
 	@./a.out
 	@make clean
 
 tp:
-	@make re -C ..
-	@gcc -I $(INC) $(TEST) $(DIR)$(LIB) test_p.c
+	@make re -C $(DIR)
+	@gcc -I $(DIR)$(INC) $(TEST) $(DIR)$(LIB) test_p.c
 	@./a.out
 	@make clean
 
 ts:
-	@make re -C ..
-	@gcc -I $(INC) $(TEST) $(DIR)$(LIB) test_s.c
+	@make re -C $(DIR)
+	@gcc -I $(DIR)$(INC) $(TEST) $(DIR)$(LIB) test_s.c
 	@./a.out
 	@make clean
 
 tx:
-	@make re -C ..
-	@gcc -I $(INC) $(TEST) $(DIR)$(LIB) test_x.c
+	@make re -C $(DIR)
+	@gcc -I $(DIR)$(INC) $(TEST) $(DIR)$(LIB) test_x.c
 	@./a.out
 	@make clean
 
 tc:
-	@make re -C ..
-	@gcc -I $(INC) $(TEST) $(DIR)$(LIB) test_c.c
+	@make re -C $(DIR)
+	@gcc -I $(DIR)$(INC) $(TEST) $(DIR)$(LIB) test_c.c
 	@./a.out
 	@make clean
 
 tb:
-	@make re -C ..
-	@gcc -I $(INC) $(TEST) $(DIR)$(LIB) test_b.c
+	@make re -C $(DIR)
+	@gcc -I $(DIR)$(INC) $(TEST) $(DIR)$(LIB) test_b.c
 	@./a.out
 	@make clean
 
 bug:
-	@make re -C ..
-	@gcc -I $(INC) -g main.c $(TEST) $(DIR)$(LIB)
+	@make re -C $(DIR)
+	@gcc -I $(DIR)$(INC) -g main.c $(TEST) $(DIR)$(LIB)
 	@echo "---- Done compiling for debugger.\n"
 	@./a.out
 	@make clean
