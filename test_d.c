@@ -443,7 +443,9 @@ printf("\n____________________________________\nWARNINGS: \n\n");
 	t = ft_printf(" (%d)\n", ft_printf("08.*(-4): |%08.*i|", -4, 42));
 	result(test, t);
 
-	printf("\n[RESULT %d | %d OK]\n\n", g_test, g_pass);
+	printf("\n_____________________________________\ndecimal \n");
+
+	printf("\n[RESULT: \x1b[33m%d\x1b[0m correct out of \x1b[33m%d\x1b[0m tests]\n\n", g_pass, g_test);
 
 	return (0);
 }

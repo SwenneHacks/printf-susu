@@ -100,7 +100,9 @@ int		main(void)
 	t = ft_printf(" (%d)\n", ft_printf("-0*3: |%-0*c|", 3, 0));
 	result(test, t);
 
-	printf("\n RESULT: %d correct out of %d tests\n\n", g_pass, g_test);
+	printf("\n_____________________________________\ncharacters \n");
+
+	printf("\n[RESULT: \x1b[33m%d\x1b[0m correct out of \x1b[33m%d\x1b[0m tests]\n\n", g_pass, g_test);
 
 	return (0);
 }

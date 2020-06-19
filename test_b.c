@@ -163,7 +163,9 @@ printf("\n_____________________________________ TO FIX: \n\n");
 	t =	ft_printf(			"		|% 0+-5d|\n", -55);
 	result(test, t);
 
-	printf("\n RESULT: %d correct out of %d tests\n\n", g_pass, g_test);
+	printf("\n_____________________________________\nbonus \n");
+
+	printf("\n[RESULT: \x1b[33m%d\x1b[0m correct out of \x1b[33m%d\x1b[0m tests]\n\n", g_pass, g_test);
 
 	return (0);
 }

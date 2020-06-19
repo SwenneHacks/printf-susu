@@ -328,7 +328,9 @@ printf("_____________________________________\nBONUS: \n\n");
 	t =	ft_printf(			"		|%+u|\n", 0);
 	result(test, t);
 
-	printf("\n  [RESULT: %d | %d OK]\n\n", g_pass, g_pass);
+	printf("\n_____________________________________\nunsigned \n");
+
+	printf("\n[RESULT: \x1b[33m%d\x1b[0m correct out of \x1b[33m%d\x1b[0m tests]\n\n", g_pass, g_test);
 
 	return (0);
 }
