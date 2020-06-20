@@ -5,6 +5,7 @@ int		main(void)
 {
 	int				test;
 	char			*s = "Here";
+	char			*val = "123456789ABCDEFGHIJK"; //20 length string, not counting null
 	int				t;
 	g_pass 			= 0;
 	g_test			= 0;
@@ -120,6 +121,19 @@ printf("\n_____________________________________\nUN.BEHAVIOR: \n\n");
 		printf(				"%%0-5s");
 	test =	printf(				"		|%0-5s|\n", s);
 	t =	ft_printf(				"		|%0-5s|\n", s);
+	result(test, t);
+
+	test = printf(" (%d)\n", printf("-0*0: |%-0*s|", 0, val));
+	t = ft_printf(" (%d)\n", ft_printf("-0*0: |%-0*s|", 0, val));
+	result(test, t);
+	test = printf(" (%d)\n", printf("-0*3: |%-0*s|", 3, val));
+	t = ft_printf(" (%d)\n", ft_printf("-0*3: |%-0*s|", 3, val));
+	result(test, t);
+	test = printf(" (%d)\n", printf("-0*0: |%-0*s|", 0, NULL));
+	t = ft_printf(" (%d)\n", ft_printf("-0*0: |%-0*s|", 0, NULL));
+	result(test, t);
+	test = printf(" (%d)\n", printf("-0*3: |%-0*s|", 3, NULL));
+	t = ft_printf(" (%d)\n", ft_printf("-0*3: |%-0*s|", 3, NULL));
 	result(test, t);
 
 	printf("\n_____________________________________\nstrings \n");

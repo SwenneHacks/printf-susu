@@ -6,7 +6,7 @@
 #    By: swofferh <swofferh@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/12/16 17:46:43 by swofferh      #+#    #+#                  #
-#    Updated: 2020/06/20 23:41:05 by sofferha      ########   odam.nl          #
+#    Updated: 2020/06/20 23:57:58 by sofferha      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,39 +17,39 @@ TEST = test.c
 
 all:
 	@make re -C $(DIR)
-	@mkdir output
+	@mkdir -p output
 
-td:
+td: all
 	@gcc -w -I $(DIR)$(INC) $(TEST) $(DIR)$(LIB) test_d.c
 	@./a.out
 	@mv a.out output/out_decimal
 
-tu:
+tu: all
 	@gcc -w -I $(DIR)$(INC) $(TEST) $(DIR)$(LIB) test_u.c
 	@./a.out
 	@mv a.out output/out_unsigned
 
-tp:
+tp: all
 	@gcc -w -I $(DIR)$(INC) $(TEST) $(DIR)$(LIB) test_p.c
 	@./a.out
 	@mv a.out output/out_pointer
 
-ts:
+ts: all
 	@gcc -w -I $(DIR)$(INC) $(TEST) $(DIR)$(LIB) test_s.c
 	@./a.out
 	@mv a.out output/out_string
 
-tx:
+tx: all
 	@gcc -w -I $(DIR)$(INC) $(TEST) $(DIR)$(LIB) test_x.c
 	@./a.out
 	@mv a.out output/out_hexadecimal
 
-tc:
+tc: all
 	@gcc -w -I $(DIR)$(INC) $(TEST) $(DIR)$(LIB) test_c.c
 	@./a.out
 	@mv a.out output/out_characters
 
-tb:
+tb: all
 	@gcc -w -I $(DIR)$(INC) $(TEST) $(DIR)$(LIB) test_b.c
 	@./a.out
 	@mv a.out output/out_bonus
