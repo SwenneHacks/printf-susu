@@ -6,17 +6,17 @@
 #    By: swofferh <swofferh@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/12/16 17:46:43 by swofferh      #+#    #+#                  #
-#    Updated: 2020/06/20 23:57:58 by sofferha      ########   odam.nl          #
+#    Updated: 2020/06/22 20:46:53 by swofferh      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-DIR = ../vogesphere/
+DIR = ../
 LIB = libftprintf.a
 INC = printf.h
 TEST = test.c
 
 all:
-	@make re -C $(DIR)
+	@$(MAKE) re -C $(DIR)
 	@mkdir -p output
 
 td: all
@@ -54,11 +54,10 @@ tb: all
 	@./a.out
 	@mv a.out output/out_bonus
 
-bug:
-	@gcc -w -I $(DIR)$(INC) -g main.c $(TEST) $(DIR)$(LIB)
+bug: all
+	@gcc -w -I $(DIR)$(INC) -g main.c $(TEST) $(DIR)$(LIB) -o bug
 	@echo "---- Done compiling for debugger.\n"
-	@./a.out
-	@mv a.out output/out_debugging
+	@./bug
 
 total: tb tc tx ts tp tu td 
 	@clear
@@ -72,4 +71,5 @@ total: tb tc tx ts tp tu td
 	
 clean:
 	@rm -rf output
-	@rm -rf a.out
+	@rm -rf a.out bug
+	@rm -rf *.dSYM
