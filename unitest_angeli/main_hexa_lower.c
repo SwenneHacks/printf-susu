@@ -6,7 +6,7 @@
 /*   By: limartin <limartin@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/15 19:45:27 by limartin      #+#    #+#                 */
-/*   Updated: 2020/06/19 21:33:17 by swofferh      ########   odam.nl         */
+/*   Updated: 2020/06/22 21:34:53 by swofferh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,14 @@ int		main(void)
 	unsigned int	val;
 
 	val = 42;
-	val = 15;
-	val = 16;
-	val = 185334478;
-	val = -1;
-	val = 4294967295;
-	val = -4294967295;
-	val = 0;
-	val = 2457;
+	// val = 15;
+	// val = 16;
+	// val = 185334478;
+	// val = -1;
+	// val = 4294967295;
+	// val = -4294967295;
+	// val = 0;
+	// val = 2457;
 	
 	g_pass 	= 0;
 	g_test	= 1;
