@@ -163,7 +163,41 @@ printf("\n_____________________________________ TO FIX: \n\n");
 	t =	ft_printf(			"		|% 0+-5d|\n", -55);
 	result(test, t);
 
-	printf("\n_____________________________________\nbonus \n");
+	printf("\n_____________________________________\n No Argument: \n\n");
+
+	test = printf(" (%d)\n", printf("*8.4: |%*.4%|", 8));
+	t = ft_printf(" (%d)\n", ft_printf("*8.4: |%*.4%|", 8));
+	result(test, t);
+	test = printf(" (%d)\n", printf("*4.8: |%*.8%|", 4));
+	t = ft_printf(" (%d)\n", ft_printf("*4.8: |%*.8%|", 4));
+	result(test, t);
+	test = printf(" (%d)\n", printf("*8.8: |%*.8%|", 8));
+	t = ft_printf(" (%d)\n", ft_printf("*8.8: |%*.8%|", 8));
+	result(test, t);
+	test = printf(" (%d)\n", printf("8.*4: |%8.*%|", 4));
+	t = ft_printf(" (%d)\n", ft_printf("8.*4: |%8.*%|", 4));
+	result(test, t);
+	test = printf(" (%d)\n", printf("4.*8: |%4.*%|", 8));
+	t = ft_printf(" (%d)\n", ft_printf("4.*8: |%4.*%|", 8));
+	result(test, t);
+	test = printf(" (%d)\n", printf("8.*8: |%8.*%|", 8));
+	t = ft_printf(" (%d)\n", ft_printf("8.*8: |%8.*%|", 8));
+	result(test, t);
+	test = printf(" (%d)\n", printf("Precis. .*i: |%.*%|", 0));
+	t = ft_printf(" (%d)\n", ft_printf("Precis. .*i: |%.*%|", 0));
+	result(test, t);
+	test = printf(" (%d)\n", printf("Mfw *5: |%*%|",        5));
+	t = ft_printf(" (%d)\n", ft_printf("Mfw *5: |%*%|",        5));
+	result(test, t);
+	test = printf(" (%d)\n", printf("01.8: |%01.8%|"));
+	t = ft_printf(" (%d)\n", ft_printf("01.8: |%01.8%|"));
+	result(test, t);
+	// test = printf(" (%d)\n", printf("Precis. .*: |%.*%|"), 10);
+	// t = ft_printf(" (%d)\n", ft_printf("Precis. .*: |%.*%|"), 10);
+	// result(test, t);
+	test = printf(" (%d)\n", printf("Precis. .*: |%.*%|", 0));
+	t = ft_printf(" (%d)\n", ft_printf("Precis. .*: |%.*%|", 0));
+	result(test, t);
 
 	printf("\n[RESULT: \x1b[33m%d\x1b[0m correct out of \x1b[33m%d\x1b[0m tests]\n\n", g_pass, g_test);
 
