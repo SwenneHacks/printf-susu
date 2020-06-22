@@ -6,7 +6,7 @@
 /*   By: limartin <limartin@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/15 19:45:27 by limartin      #+#    #+#                 */
-/*   Updated: 2020/06/22 15:33:12 by sofferha      ########   odam.nl         */
+/*   Updated: 2020/06/22 21:55:21 by swofferh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -518,8 +518,8 @@ int		main(void)
 	test = printf(" (%d)\n", printf("Precis. .*i: |%.*%|"));
 	ft = ft_printf(" (%d)\n", ft_printf("Precis. .*i: |%.*%|"));
 	result(test, ft);
-	test = printf(" (%d)\n", printf("P .*0: |%.*%|", 0));
-	ft = ft_printf(" (%d)\n", ft_printf("P .*0: |%.*%|", 0));
+	test = printf(" (%d)\n", printf("P .*0(0): |%.*%|", 0));
+	ft = ft_printf(" (%d)\n", ft_printf("P .*0(0): |%.*%|", 0));
 	result(test, ft);
 	test = printf(" (%d)\n", printf("P .*01: |%.*%|", 01));
 	ft = ft_printf(" (%d)\n", ft_printf("P .*01: |%.*%|", 01));
@@ -723,8 +723,8 @@ int		main(void)
 	test = printf(" (%d)\n", printf("Precis. .*i: |%.*%|", 0));
 	ft = ft_printf(" (%d)\n", ft_printf("Precis. .*i: |%.*%|", 0));
 	result(test, ft);
-	test = printf(" (%d)\n", printf("P .*0: |%.*%|", 0));
-	ft = ft_printf(" (%d)\n", ft_printf("P .*0: |%.*%|", 0));
+	test = printf(" (%d)\n", printf("P .*0(0): |%.*%|", 0));
+	ft = ft_printf(" (%d)\n", ft_printf("P .*0(0): |%.*%|", 0));
 	result(test, ft);
 	test = printf(" (%d)\n", printf("P .*01: |%.*%|", 01));
 	ft = ft_printf(" (%d)\n", ft_printf("P .*01: |%.*%|", 01));
