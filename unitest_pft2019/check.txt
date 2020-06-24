@@ -1,0 +1,150 @@
+WARNING: The return values reported here may be bugged on some systems.
+          See https://github.com/gavinfielder/pft/issues/11
+          Run in non-fork mode (-X) to ensure accurate return value
+          reporting, set IGNORE_RETURN_VALUE=1 in options-config.ini,
+          or run test_pipes.sh to see if your system has this bug.
+          This bug does not affect the pass/fail result of a test, nor
+          the function output--only the reported return value.
+
+
+Test 339 (x_hexlmax) : FAILED.
+    First line of code: {return test("%x", 4294967295u);}
+      expected return value : 8
+      your return value     : 17
+      expected output : "ffffffff"
+      your output     : "ffffffffffffffff"
+      expected (nonprintable as hex) : "ffffffff"
+      actual   (nonprintable as hex) : "ffffffffffffffff"
+
+Test 384 (X_hexumax) : FAILED.
+    First line of code: {return test("%X", 4294967295u);}
+      expected return value : 8
+      your return value     : 17
+      expected output : "FFFFFFFF"
+      your output     : "FFFFFFFFFFFFFFFF"
+      expected (nonprintable as hex) : "FFFFFFFF"
+      actual   (nonprintable as hex) : "FFFFFFFFFFFFFFFF"
+
+Test 635 (moul_d_7) : FAILED.
+    First line of code: {return test("%d", INT_MIN);}
+      expected return value : 12
+      your return value     : 12
+      expected output : "-2147483648"
+      your output     : "-2147483647"
+      expected (nonprintable as hex) : "-2147483648"
+      actual   (nonprintable as hex) : "-2147483647"
+
+Test 637 (moul_d_9) : FAILED.
+    First line of code: {return test("%d", INT_MAX + 1);}
+      expected return value : 12
+      your return value     : 12
+      expected output : "-2147483648"
+      your output     : "-2147483647"
+      expected (nonprintable as hex) : "-2147483648"
+      actual   (nonprintable as hex) : "-2147483647"
+
+Test 677 (moul_i_7) : FAILED.
+    First line of code: {return test("%i", INT_MIN);}
+      expected return value : 12
+      your return value     : 12
+      expected output : "-2147483648"
+      your output     : "-2147483647"
+      expected (nonprintable as hex) : "-2147483648"
+      actual   (nonprintable as hex) : "-2147483647"
+
+Test 679 (moul_i_9) : FAILED.
+    First line of code: {return test("%i", INT_MAX + 1);}
+      expected return value : 12
+      your return value     : 12
+      expected output : "-2147483648"
+      your output     : "-2147483647"
+      expected (nonprintable as hex) : "-2147483648"
+      actual   (nonprintable as hex) : "-2147483647"
+
+Test 689 (moul_u_7) : FAILED.
+    First line of code: {return test("%u", INT_MIN);}
+      expected return value : 11
+      your return value     : 11
+      expected output : "2147483648"
+      your output     : "6442450944"
+      expected (nonprintable as hex) : "2147483648"
+      actual   (nonprintable as hex) : "6442450944"
+
+Test 691 (moul_u_9) : FAILED.
+    First line of code: {return test("%u", INT_MAX + 1);}
+      expected return value : 11
+      your return value     : 11
+      expected output : "2147483648"
+      your output     : "6442450944"
+      expected (nonprintable as hex) : "2147483648"
+      actual   (nonprintable as hex) : "6442450944"
+
+Test 697 (moul_x_3) : FAILED.
+    First line of code: {return test("Il fait au moins %x
+", -8000);}
+      expected return value : 28
+      your return value     : 37
+      expected output : "Il fait au moins ffffe0c0
+"
+      your output     : "Il fait au moins ffffffffffffe0c0
+"
+      expected (nonprintable as hex) : "Il fait au moins ffffe0c0\x0a"
+      actual   (nonprintable as hex) : "Il fait au moins ffffffffffffe0c0\x0a"
+
+Test 701 (moul_x_7) : FAILED.
+    First line of code: {return test("%x", INT_MIN);}
+      expected return value : 8
+      your return value     : 17
+      expected output : "80000000"
+      your output     : "ffffffff80000000"
+      expected (nonprintable as hex) : "80000000"
+      actual   (nonprintable as hex) : "ffffffff80000000"
+
+Test 703 (moul_x_9) : FAILED.
+    First line of code: {return test("%x", INT_MAX + 1);}
+      expected return value : 8
+      your return value     : 17
+      expected output : "80000000"
+      your output     : "ffffffff80000000"
+      expected (nonprintable as hex) : "80000000"
+      actual   (nonprintable as hex) : "ffffffff80000000"
+
+Test 716 (moul_leftjusty_2) : FAILED.
+    First line of code: {return test("%%-d 42 == %-d
+", INT_MIN);}
+      expected return value : 24
+      your return value     : 24
+      expected output : "%-d 42 == -2147483648
+"
+      your output     : "%-d 42 == -2147483647
+"
+      expected (nonprintable as hex) : "%-d 42 == -2147483648\x0a"
+      actual   (nonprintable as hex) : "%-d 42 == -2147483647\x0a"
+
+Test 739 (new2019_negstar_4) : FAILED.
+    First line of code: {return test("%.*s", -3, "hello");}
+      expected return value : 5
+      your return value     : 3
+      expected output : "hello"
+      your output     : "hel"
+      expected (nonprintable as hex) : "hello"
+      actual   (nonprintable as hex) : "hel"
+
+Test 740 (new2019_negstar_5) : FAILED.
+    First line of code: {return test("%-*.*s", -7, -3, "yolo");}
+      expected return value : 7
+      your return value     : 7
+      expected output : "yolo   "
+      your output     : "yol    "
+      expected (nonprintable as hex) : "yolo   "
+      actual   (nonprintable as hex) : "yol    "
+
+Test 743 (new2019_negstar_8) : FAILED.
+    First line of code: {return test("%.*i", -6, -3);}
+      expected return value : 2
+      your return value     : 7
+      expected output : "-3"
+      your output     : "-000003"
+      expected (nonprintable as hex) : "-3"
+      actual   (nonprintable as hex) : "-000003"
+
