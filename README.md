@@ -5,13 +5,23 @@ Codam College [42 Network] write-your-own-printf Project.
 
 **(Makefile rules)**
 
->Testing %c: ``` make tc ```
->Testing %d: ``` make td ```
->Testing %x: ``` make tx ```
->Testing %p: ``` make tp ```
->Testing %s: ``` make ts ```
->Testing %u: ``` make tu ```
->Test bonus: ``` make tb ```
+>Testing %c: `make tc`
+>
+>Testing %d: `make td`
+>
+>Testing %x: `make tx`
+>
+>Testing %p: `make tp`
+>
+>Testing %s: `make ts`
+>
+>Testing %u: `make tu`
+>
+>Test bonus: `make tb`
+>
+>Test all: `make total`
+>
+>Debugger: `make bug`
 
 # Introduction to Printf:
 > int         ft\_printf ( const char \* str, ... );
