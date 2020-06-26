@@ -14,7 +14,7 @@ int		main(void)
 	g_pass 			= 0;
 	g_test			= 0;
 
-printf("\n____________________________________\nPOINTER (%%p): \n\n");
+printf("____________________________________\nPOINTER: \n\n");
 	
 		printf(			"arg 1");
 	test =	printf(			" 	|%p|\n", 1);
@@ -128,7 +128,7 @@ printf("_____________________________________\nZERO: \n\n");
 	t =	ft_printf(			"		|%2.10p|\n", 0);
 	result(test, t);
 
-	printf("\n  [Above: %d | %d OK]\n\n", g_test, g_pass);
+	printf("\n [Above: %d | %d OK]\n\n", g_test, g_pass);
 
 printf("\n_____________________________________\nFLAGS: \n\n");
 
@@ -193,7 +193,7 @@ printf("\n_____________________________________\nFLAGS: \n\n");
 	t =	ft_printf(			"	|%-15p|\n", -1);
 	result(test, t);
 
-	printf("\n  [Above: %d | %d OK]\n\n", g_test, g_pass);
+	printf("\n [Above: %d | %d OK]\n\n", g_test, g_pass);
 
 printf("\n_____________________________________\nNEXT LVL: \n\n");
 
@@ -209,6 +209,69 @@ printf("\n_____________________________________\nNEXT LVL: \n\n");
 	test =	printf(			"	|%p|\n", &r);
 	t =	ft_printf(			"	|%p|\n", &r);
 	result(test, t);
+
+	printf("\n [Above: %d | %d OK]\n\n", g_test, g_pass);
+
+printf("\n_____________________________________\nPERCENT: \n\n");
+	
+		printf(				"%%0-0%%");
+	test =	printf(				"		|%0-0%|\n");
+	t =	ft_printf(				"		|%0-0%|\n");
+	result(test, t);
+		printf(				"%%05%%");
+	test =	printf(				"		|%05%|\n");
+	t =	ft_printf(				"		|%05%|\n");
+	result(test, t);
+		printf(				"%%-5%%");
+	test =	printf(				"		|%-5%|\n");
+	t =	ft_printf(				"		|%-5%|\n");
+	result(test, t);
+		printf(				"%%-05%%");
+	test =	printf(				"		|%-05%|\n");
+	t =	ft_printf(				"		|%-05%|\n");
+	result(test, t);
+		printf(				"%%1.5%%");
+	test =	printf(				"		|%1.5%|\n");
+	t =	ft_printf(				"		|%1.5%|\n");
+	result(test, t);
+		printf(				"%%5.1%%");
+	test =	printf(				"		|%5.1%|\n");
+	t =	ft_printf(				"		|%5.1%|\n");
+	result(test, t);
+	test = printf("*8.4: 		|%*.4%|\n", 8);
+	t = ft_printf("*8.4: 		|%*.4%|\n", 8);
+	result(test, t);
+	test = printf("*4.8: 		|%*.8%|\n", 4);
+	t = ft_printf("*4.8: 		|%*.8%|\n", 4);
+	result(test, t);
+	test = printf("*8.8: 		|%*.8%|\n", 8);
+	t = ft_printf("*8.8: 		|%*.8%|\n", 8);
+	result(test, t);
+	test = printf("8.*4: 		|%8.*%|\n", 4);
+	t = ft_printf("8.*4: 		|%8.*%|\n", 4);
+	result(test, t);
+	test = printf("4.*8: 		|%4.*%|\n", 8);
+	t = ft_printf("4.*8: 		|%4.*%|\n", 8);
+	result(test, t);
+	test = printf("8.*8: 		|%8.*%|\n", 8);
+	t = ft_printf("8.*8: 		|%8.*%|\n", 8);
+	result(test, t);
+	test = printf("Mfw *5: 	|%*%|\n",  5);
+	t = ft_printf("Mfw *5: 	|%*%|\n",  5);
+	result(test, t);
+	test = printf("Precis. .*i: 	|%.*%|\n", 0);
+	t = ft_printf("Precis. .*i: 	|%.*%|\n", 0);
+	result(test, t);
+	test = printf("01.8: 		|%01.8%|\n");
+	t = ft_printf("01.8: 		|%01.8%|\n");
+	result(test, t);
+	test = printf("Precis. .*: 	|%.*%|\n");
+	t = ft_printf("Precis. .*: 	|%.*%|\n");
+	result(test, t);
+	test = printf("Precis. .*: 	|%.*%|\n", 0);
+	t = ft_printf("Precis. .*: 	|%.*%|\n", 0);
+
+	printf("\n\n	[Above: %d | %d OK]\n", g_test, g_pass);
 
 	printf("\n_____________________________________\npointers \n");
 

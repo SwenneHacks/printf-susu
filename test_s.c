@@ -80,9 +80,13 @@ int		main(void)
 	test = printf(				"		|%-6.4s|\n", s);
 	t = ft_printf(				"		|%-6.4s|\n", s);
 	result(test, t);
-	printf(				"%%s+2");
-	test = printf(				"		|%ss|\n", s + 2);
-	t = ft_printf(				"		|%ss|\n", s + 2);
+	printf(				"%%05s");
+	test =	printf(				"		|%09s|\n", s);
+	t =	ft_printf(				"		|%09s|\n", s);
+	result(test, t);
+	printf(				"%%0-0s");
+	test =	printf(				"		|%0-0s|\n", s);
+	t =	ft_printf(				"		|%0-0s|\n", s);
 	result(test, t);
 	printf("\n	[Above: %d | %d OK]\n", g_test, g_pass);
 printf("\n_____________________________________\nNULL: \n\n");

@@ -11,8 +11,6 @@ int		main(void)
 	g_test			= 0;
 
 	printf("\n____________________________________\nDONE: \n\n");
-
-//____________________________________________________________ UNSIGNED
 	
 		printf(			"arg 1");
 	test =	printf(			" 	|%u|\n", 1);
@@ -25,6 +23,12 @@ int		main(void)
 		printf(			"no arg");
 	test =	printf(			" 	|%u|\n");
 	t =	ft_printf(			" 	|%u|\n");
+	result(test, t);
+	test =	printf(		"%%u,-		|%u|\n", i);
+	t =	ft_printf(		"%%u,-		|%u|\n", i);
+	result(test, t);
+	test =	printf(		"%%u,&		|%u|\n", &i);
+	t =	ft_printf(		"%%u,&		|%u|\n", &i);
 	result(test, t);
 
 printf("\n_____________________________________\nZERO: \n\n");
