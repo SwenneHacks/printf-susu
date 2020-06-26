@@ -6,7 +6,7 @@
 /*   By: swofferh <swofferh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/22 19:19:09 by swofferh      #+#    #+#                 */
-/*   Updated: 2020/06/22 19:46:18 by swofferh      ########   odam.nl         */
+/*   Updated: 2020/06/26 13:07:16 by sofferha      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ int	main(void)
 {
 	int a = 0;
 	int b = 0;
-	a = printf(		"[%-3.1u]\n", 3);
-	b = ft_printf(	"[%-3.1u]\n", 3);
+	a = printf(		"|%0-*.*x|\n", 10, 11, 5);
+	b = ft_printf(	"|%0-*.*x|\n", 10, 11, 5);
 	printf("\npf |%d|\nft |%d|\n\n", a, b);
 	return (0);
 }
