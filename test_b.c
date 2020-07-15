@@ -276,7 +276,7 @@ printf("\n_____________________________________\n HEXADECIMALS: \n\n");
     test =	printf(	    	"	   |%#*.*x|\n", -1, 1, d);
 	t =	ft_printf(	    	"	   |%#*.*x|\n", -1, 1, d);
 	result(test, t);
-   		printf(			"%%#10.11x\n");
+   	printf(			"%%#10.11x\n");
     test =	printf(	    	"	   |%#*.*x|\n", 10, 11, d);
 	t =	ft_printf(	    	"	   |%#*.*x|\n", 10, 11, d);
 	result(test, t);
@@ -297,7 +297,10 @@ printf("\n_____________________________________\n HEXADECIMALS: \n\n");
 
 
 	printf("\n_____________________________________\n Bonus: \n");
-	printf("\n[RESULT: \x1b[33m%d\x1b[0m correct out of \x1b[33m%d\x1b[0m tests]\n\n", g_pass, g_test);
+	printf("\n[RESULT: \x1b[33m%d\x1b[0m correct out of \x1b[33m%d\x1b[0m tests]", g_pass, g_test);
+	if (g_pass != g_test)
+		printf("\x1b[31m FAILS:\x1b[0m%d", g_test - g_pass);
+	printf("\n\n");
 
 	return (0);
 }

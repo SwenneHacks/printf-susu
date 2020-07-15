@@ -100,7 +100,9 @@ int		main(void)
 
 	printf("\n_____________________________________\ncharacters \n");
 
-	printf("\n[RESULT: \x1b[33m%d\x1b[0m correct out of \x1b[33m%d\x1b[0m tests]\n\n", g_pass, g_test);
-
+	printf("\n[RESULT: \x1b[33m%d\x1b[0m correct out of \x1b[33m%d\x1b[0m tests]", g_pass, g_test);
+	if (g_pass != g_test)
+		printf("\x1b[31m FAILS:\x1b[0m%d", g_test - g_pass);
+	printf("\n\n");
 	return (0);
 }
