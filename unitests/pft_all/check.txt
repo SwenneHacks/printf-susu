@@ -1,0 +1,137 @@
+Test 139 (notrequired_s_undefbehav_4_flags_diff_order_5) : FAILED.
+    First line of code: {return test("%-+ 06.06s", s_hidden);}
+      expected output : "hi low"
+      your output     : "06.06s"
+      expected (nonprintable as hex) : "hi low"
+      actual   (nonprintable as hex) : "06.06s"
+
+Test 145 (notrequired_s_undefbehav_4_flags_sp_padded_diff_order_5) : FAILED.
+    First line of code: {return test("%-+ 011.06s", s_hidden);}
+      expected output : "hi low     "
+      your output     : "011.06s"
+      expected (nonprintable as hex) : "hi low     "
+      actual   (nonprintable as hex) : "011.06s"
+
+Test 151 (notrequired_s_undefbehav_4_flags_lj_as_sp_zero_trunc) : FAILED.
+    First line of code: {return test("%-+ 06.04s", s_hidden);}
+      expected output : "hi l  "
+      your output     : "06.04s"
+      expected (nonprintable as hex) : "hi l  "
+      actual   (nonprintable as hex) : "06.04s"
+
+Test 157 (notrequired_s_undefbehav_4_flags_lj_as_sp_zero__pads) : FAILED.
+    First line of code: {return test("%-+ 06.09s", s_hidden);}
+      expected output : "hi low"
+      your output     : "06.09s"
+      expected (nonprintable as hex) : "hi low"
+      actual   (nonprintable as hex) : "06.09s"
+
+Test 3510 (argnum_notinsubject_simple_swap) : FAILED.
+    First line of code: {return test("%2$s, %1$s!", "world", "hello");} //CAN-SEGFAULT
+      expected output : "hello, world!"
+      your output     : "s, s!"
+      expected (nonprintable as hex) : "hello, world!"
+      actual   (nonprintable as hex) : "s, s!"
+
+Test 3511 (argnum_notinsubject_swap_around_pct) : FAILED.
+    First line of code: {return test("%2$s %% %1$s!", "world", "hello");} //CAN-SEGFAULT
+      expected output : "hello % world!"
+      your output     : "s % s!"
+      expected (nonprintable as hex) : "hello % world!"
+      actual   (nonprintable as hex) : "s % s!"
+
+Test 3512 (argnum_notinsubject_swap_strfloat) : FAILED.
+    First line of code: {return test("%2$f, %1$s!", "world", 5.75);} //CAN-SEGFAULT
+      expected output : "5.750000, world!"
+      your output     : "f, s!"
+      expected (nonprintable as hex) : "5.750000, world!"
+      actual   (nonprintable as hex) : "f, s!"
+
+Test 3513 (argnum_notinsubject_swap_floatstr) : FAILED.
+    First line of code: {return test("%2$s, %1$f!", 5.75, "abc");} //CAN-SEGFAULT
+      expected output : "abc, 5.750000!"
+      your output     : "s, f!"
+      expected (nonprintable as hex) : "abc, 5.750000!"
+      actual   (nonprintable as hex) : "s, f!"
+
+Test 3514 (argnum_notinsubject_swap_ldblstr) : FAILED.
+    First line of code: {return test("%2$s, %1$Lf!", 5.75L, "abc");} //CAN-SEGFAULT
+      expected output : "abc, 5.750000!"
+      your output     : "s, Lf!"
+      expected (nonprintable as hex) : "abc, 5.750000!"
+      actual   (nonprintable as hex) : "s, Lf!"
+
+Test 3515 (argnum_notinsubject_swap_strldbl) : FAILED.
+    First line of code: {return test("%2$Lf, %1$s!", "world", 5.75L);} //CAN-SEGFAULT
+      expected output : "5.750000, world!"
+      your output     : "Lf, s!"
+      expected (nonprintable as hex) : "5.750000, world!"
+      actual   (nonprintable as hex) : "Lf, s!"
+
+Test 3516 (argnum_notinsubject_swap_ldblchar) : FAILED.
+    First line of code: {return test("%2$c, %1$Lf!", 5.75L, 'c');} //CAN-SEGFAULT
+      expected output : "c, 5.750000!"
+      your output     : "c, Lf!"
+      expected (nonprintable as hex) : "c, 5.750000!"
+      actual   (nonprintable as hex) : "c, Lf!"
+
+Test 3517 (argnum_notinsubject_swap_charldbl) : FAILED.
+    First line of code: {return test("%2$Lf, %1$c!", 'c', 5.75L);} //CAN-SEGFAULT
+      expected output : "5.750000, c!"
+      your output     : "Lf, c!"
+      expected (nonprintable as hex) : "5.750000, c!"
+      actual   (nonprintable as hex) : "Lf, c!"
+
+Test 3518 (argnum_notinsubject_swap_floatstr_around_pct) : FAILED.
+    First line of code: {return test("%2$s %% %1$f!", 5.75, "abc");} //CAN-SEGFAULT
+      expected output : "abc % 5.750000!"
+      your output     : "s % f!"
+      expected (nonprintable as hex) : "abc % 5.750000!"
+      actual   (nonprintable as hex) : "s % f!"
+
+Test 3519 (argnum_notinsubject_swap_strfloat_around_pct) : FAILED.
+    First line of code: {return test("%2$f %% %1$s!", "world", 5.75);} //CAN-SEGFAULT
+      expected output : "5.750000 % world!"
+      your output     : "f % s!"
+      expected (nonprintable as hex) : "5.750000 % world!"
+      actual   (nonprintable as hex) : "f % s!"
+
+Test 3520 (argnum_notinsubject_loopback_throwswarning) : FAILED.
+    First line of code: {return test("%i %i %1$i %i %i", 1, 2, 3);} //CAN-SEGFAULT
+      expected output : "1 2 1 2 3"
+      your output     : "1 2 i 3 77992"
+      expected (nonprintable as hex) : "1 2 1 2 3"
+      actual   (nonprintable as hex) : "1 2 i 3 77992"
+
+Test 3521 (argnum_notinsubject_onlyone) : FAILED.
+    First line of code: {return test("%1$s %1$s %1$s %1$s %1$s %1$s %1$s %1$s.", "buffalo");} //CAN-SEGFAULT
+      expected output : "buffalo buffalo buffalo buffalo buffalo buffalo buffalo buffalo."
+      your output     : "s s s s s s s s."
+      expected (nonprintable as hex) : "buffalo buffalo buffalo buffalo buffalo buffalo buffalo buffalo."
+      actual   (nonprintable as hex) : "s s s s s s s s."
+
+Test 3522 (argnum_notinsubject_start2thentofloatthen1_throwswarning) : FAILED.
+    First line of code: {return test("%2$s %f %1$i", 5, "abc", 5.75f);} //CAN-SEGFAULT
+      expected output : "abc 5.750000 5"
+      your output     : "s  i"
+      expected (nonprintable as hex) : "abc 5.750000 5"
+      actual   (nonprintable as hex) : "s  i"
+
+Test 3523 (argnum_notinsubject_ultimate_1_throwswarning) : FAILED.
+    First line of code: {return test("%2$s %f %1$i %s %f %2$s %1$i %s %1$i %3$f %1$i %s %f %2$s", 5, "abc", 5.75);} //CAN-SEGFAULT
+    SEGFAULT
+
+Test 3524 (argnum_notinsubject_ultimate_2_throwswarning) : FAILED.
+    First line of code: {return test("%4$.5s %.4i %lli %1$Lf %c %7$20.6s %5$i %2$c %1$.2Lf %c %i", //CAN-SEGFAULT
+      expected output : "Atlan 0054 9879879879879 5.750000 c               baby s 54 c 5.75 c -17"
+      your output     : ".5s 0099 li Lf ï 20.6s i c .2Lf ] 0054"
+      expected (nonprintable as hex) : "Atlan 0054 9879879879879 5.750000 c               baby s 54 c 5.75 c -17"
+      actual   (nonprintable as hex) : ".5s 0099 li Lf \xef 20.6s i c .2Lf ] 0054"
+
+Test 3525 (argnum_notinsubject_ultimate_2_with_pct_throwswarning) : FAILED.
+    First line of code: {return test("%% %4$.5s %.4i %lli %% %1$Lf %c %7$20.6s %5$i %% %2$c %1$.2Lf %c %i", //CAN-SEGFAULT
+      expected output : "% Atlan 0054 9879879879879 % 5.750000 c               baby s 54 % c 5.75 c -17"
+      your output     : "% .5s 0099 li % Lf ï 20.6s i % c .2Lf ] 0054"
+      expected (nonprintable as hex) : "% Atlan 0054 9879879879879 % 5.750000 c               baby s 54 % c 5.75 c -17"
+      actual   (nonprintable as hex) : "% .5s 0099 li % Lf \xef 20.6s i % c .2Lf ] 0054"
+
