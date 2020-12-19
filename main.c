@@ -1,5 +1,6 @@
 
 #include "test.h"
+#include <stdlib.h>
 
 int		main(void)
 {
@@ -8,5 +9,7 @@ int		main(void)
 	a = printf(		"[%d%d%d%d]\n", -1, -2, 3, 4);
 	b = ft_printf(	"[%d%d%d%d]\n", -1, -2, 3, 4);
 	printf("\npf |%d|\nft |%d|\n\n", a, b);
+	//while (1);
+	//system("leaks bug");
 	return(0);
 }
