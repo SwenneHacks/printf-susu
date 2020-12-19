@@ -6,13 +6,13 @@
 #    By: swofferh <swofferh@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/12/16 17:46:43 by swofferh      #+#    #+#                  #
-#    Updated: 2020/06/22 01:32:45 by sofferha      ########   odam.nl          #
+#    Updated: 2020/10/28 14:46:31 by sofferha      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-DIR = ../../vogesphere/
+DIR = ../vogesphere/
 LIB = libftprintf.a
-INC = printf.h
+INC = ft_printf.h
 TEST = test.c
 
 all:
