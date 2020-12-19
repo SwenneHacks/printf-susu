@@ -6,11 +6,11 @@
 #    By: swofferh <swofferh@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/12/16 17:46:43 by swofferh      #+#    #+#                  #
-#    Updated: 2020/12/19 22:38:10 by sofferha      ########   odam.nl          #
+#    Updated: 2020/12/19 22:42:35 by sofferha      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-DIR = ../
+DIR = ../github/
 LIB = libftprintf.a
 INC = printf.h
 TEST = test.c
@@ -49,7 +49,8 @@ tc: all
 	@./a.out
 	@mv a.out output/out_characters
 
-tb: all
+tb:
+	@$(MAKE) bonus -C $(DIR)
 	@gcc -w -I $(DIR)$(INC) $(TEST) $(DIR)$(LIB) test_b.c
 	@./a.out
 	@mv a.out output/out_bonus
@@ -69,7 +70,8 @@ total: tb tc tx ts tp tu td
 	@./output/out_string | tail -n5
 	@./output/out_bonus | tail -n5
 	
-clean:
+clear:
+	@$(MAKE) fclean -C $(DIR)
 	@rm -rf output
 	@rm -rf a.out bug
 	@rm -rf bug.dSYM 
