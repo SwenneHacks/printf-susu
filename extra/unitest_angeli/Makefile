@@ -6,11 +6,11 @@
 #    By: swofferh <swofferh@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/12/16 17:46:43 by swofferh      #+#    #+#                  #
-#    Updated: 2020/10/28 14:46:31 by sofferha      ########   odam.nl          #
+#    Updated: 2020/12/19 22:37:10 by sofferha      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-DIR = ../vogesphere/
+DIR = ../../
 LIB = libftprintf.a
 INC = ft_printf.h
 TEST = test.c

@@ -11,8 +11,6 @@ int		main(void)
 	g_test			= 0;
 
 	printf("\n____________________________________\nDONE: \n\n");
-
-//____________________________________________________________ UNSIGNED
 	
 		printf(			"arg 1");
 	test =	printf(			" 	|%u|\n", 1);
@@ -25,6 +23,12 @@ int		main(void)
 		printf(			"no arg");
 	test =	printf(			" 	|%u|\n");
 	t =	ft_printf(			" 	|%u|\n");
+	result(test, t);
+	test =	printf(		"%%u,-		|%u|\n", i);
+	t =	ft_printf(		"%%u,-		|%u|\n", i);
+	result(test, t);
+	test =	printf(		"%%u,&		|%u|\n", &i);
+	t =	ft_printf(		"%%u,&		|%u|\n", &i);
 	result(test, t);
 
 printf("\n_____________________________________\nZERO: \n\n");
@@ -315,6 +319,10 @@ printf("\n_____________________________________\nFLAGS: \n\n");
 	test =	printf(			"	|%8.10u|\n", 8375);
 	t =	ft_printf(			"	|%8.10u|\n", 8375);
 	result(test, t);
+		printf(			".*u");
+	test =	printf(			"	|%.*u|\n", -3, 8375);
+	t =	ft_printf(			"	|%.*u|\n", -3, 8375);
+	result(test, t);
 	
 	printf("\n  [Above: %d | %d OK]\n", g_test, g_pass);
 
@@ -330,7 +338,10 @@ printf("_____________________________________\nBONUS: \n\n");
 
 	printf("\n_____________________________________\nunsigned \n");
 
-	printf("\n[RESULT: \x1b[33m%d\x1b[0m correct out of \x1b[33m%d\x1b[0m tests]\n\n", g_pass, g_test);
+	printf("\n[RESULT: \x1b[33m%d\x1b[0m correct out of \x1b[33m%d\x1b[0m tests]", g_pass, g_test);
+	if (g_pass != g_test)
+		printf("\x1b[31m FAILS:\x1b[0m%d", g_test - g_pass);
+	printf("\n\n");
 
 	return (0);
 }

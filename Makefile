@@ -6,7 +6,7 @@
 #    By: swofferh <swofferh@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/12/16 17:46:43 by swofferh      #+#    #+#                  #
-#    Updated: 2020/12/19 22:31:18 by sofferha      ########   odam.nl          #
+#    Updated: 2020/12/19 22:38:10 by sofferha      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ INC = printf.h
 TEST = test.c
 
 all:
-	@make re -C $(DIR)
+	@$(MAKE) re -C $(DIR)
 	@mkdir -p output
 
 td: all
@@ -54,7 +54,7 @@ tb: all
 	@./a.out
 	@mv a.out output/out_bonus
 
-bug:
+bug: all
 	@gcc -w -I $(DIR)$(INC) -g main.c $(TEST) $(DIR)$(LIB) -o bug
 	@echo "---- Done compiling for debugger.\n"
 	@./bug

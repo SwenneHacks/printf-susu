@@ -79,8 +79,8 @@ int		main(void)
 	test =	printf(			"%%.10c		|%.10c|\n", c);
 	t =	ft_printf(			"%%.10c		|%.10c|\n", c);
 	result(test, t);
-	test =	printf(			"%%c 		|%c|\n", NULL);
-	t =	ft_printf(			"%%c 		|%c|\n", NULL);
+	test =	printf(			"NULL 		|%c|\n", NULL);
+	t =	ft_printf(			"NULL 		|%c|\n", NULL);
 	result(test, t);
 	test =	printf(			"%%0c 		|%0c|\n", c);
 	t =	ft_printf(			"%%0c 		|%0c|\n", c);
@@ -91,18 +91,18 @@ int		main(void)
 	test =	printf(			"%%-05c 		|%-05c|\n", c);
 	t =	ft_printf(			"%%-05c 		|%-05c|\n", c);
 	result(test, t);
-
-	test = printf(" (%d)\n", printf("-0*0: |%-0*c|", 0, 0));
-	t = ft_printf(" (%d)\n", ft_printf("-0*0: |%-0*c|", 0, 0));
+	test = printf(			"-0*0: 		|%-0*c|\n", 0, 0);
+	t = ft_printf(			"-0*0: 		|%-0*c|\n", 0, 0);
 	result(test, t);
-
-	test = printf(" (%d)\n", printf("-0*3: |%-0*c|", 3, 0));
-	t = ft_printf(" (%d)\n", ft_printf("-0*3: |%-0*c|", 3, 0));
+	test = printf(			"-0*3: 		|%-0*c|\n", 3, 0);
+	t = ft_printf(			"-0*3: 		|%-0*c|\n", 3, 0);
 	result(test, t);
 
 	printf("\n_____________________________________\ncharacters \n");
 
-	printf("\n[RESULT: \x1b[33m%d\x1b[0m correct out of \x1b[33m%d\x1b[0m tests]\n\n", g_pass, g_test);
-
+	printf("\n[RESULT: \x1b[33m%d\x1b[0m correct out of \x1b[33m%d\x1b[0m tests]", g_pass, g_test);
+	if (g_pass != g_test)
+		printf("\x1b[31m FAILS:\x1b[0m%d", g_test - g_pass);
+	printf("\n\n");
 	return (0);
 }
