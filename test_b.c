@@ -235,9 +235,9 @@ printf("\n_____________________________________ BONUS: \n\n");
 	test = printf(" (%d)\n", printf("01.8: |%01.8%|") - 8);
 	t = ft_printf(" (%d)\n", ft_printf("01.8: |%01.8%|") - 8);
 	result(test, t);
-	// test = printf(" (%d)\n", printf("Precis. .*: |%.*%|"), 10);
-	// t = ft_printf(" (%d)\n", ft_printf("Precis. .*: |%.*%|"), 10);
-	// result(test, t);
+	test = printf(" (%d)\n", printf("Precis. .*: |%.*%|"), 10);
+	t = ft_printf(" (%d)\n", ft_printf("Precis. .*: |%.*%|"), 10);
+	result(test, t);
 	test = printf(" (%d)\n", printf(".*: |%.*%|", 0) - 8);
 	t = ft_printf(" (%d)\n", ft_printf(".*: |%.*%|", 0) - 8);
 printf("\n\n[Above: %d | %d OK]\n", g_test, g_pass);
@@ -356,10 +356,10 @@ printf("\n_____________________________________\n HEXADECIMALS: \n\n");
     test =	printf(	    	"	   |% 0+8.3d|\n", 1234);
 	t =	ft_printf(	    	"	   |% 0+8.3d|\n", 1234);
 	result(test, t);
-	printf(			"%%4$.3d\n");
-    test =	printf(	    	"	   |%4$.3d|\n", 1234);
-	t =	ft_printf(	    	"	   |%4$.3d|\n", 1234);
-	result(test, t);
+	// printf(			"%%4$.3d\n");
+    // test =	printf(	    	"	   |%4$.3d|\n", 1234);
+	// t =	ft_printf(	    	"	   |%4$.3d|\n", 1234);
+	// result(test, t);
 
 	// printf("\n_____________________________________\nUndefined Behavior: \n\n\n");
 
