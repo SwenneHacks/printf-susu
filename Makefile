@@ -6,11 +6,11 @@
 #    By: swofferh <swofferh@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/12/16 17:46:43 by swofferh      #+#    #+#                  #
-#    Updated: 2020/12/19 22:42:35 by sofferha      ########   odam.nl          #
+#    Updated: 2021/01/04 16:55:01 by sofferha      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-DIR = ../github/
+DIR = ../printf
 LIB = libftprintf.a
 INC = printf.h
 TEST = test.c
