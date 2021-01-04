@@ -6,7 +6,7 @@
 #    By: swofferh <swofferh@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/12/16 17:46:43 by swofferh      #+#    #+#                  #
-#    Updated: 2021/01/04 16:55:01 by sofferha      ########   odam.nl          #
+#    Updated: 2021/01/04 17:18:23 by sofferha      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -56,7 +56,7 @@ tb:
 	@mv a.out output/out_bonus
 
 bug: all
-	@gcc -w -I $(DIR)$(INC) -g main.c $(TEST) $(DIR)$(LIB) -o bug
+	@gcc -w -I $(DIR)$(INC) -g debug.c $(TEST) $(DIR)$(LIB) -o bug
 	@echo "---- Done compiling for debugger.\n"
 	@./bug
 
